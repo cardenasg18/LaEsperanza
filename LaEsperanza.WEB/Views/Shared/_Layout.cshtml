@@ -48,6 +48,7 @@
                 </a>
             </li>
 
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -107,7 +108,9 @@
                     <span>Pages</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    
                     <div class="bg-white py-2 collapse-inner rounded">
+                        <partial name="_LoginPartial" />
                         <h6 class="collapse-header">Login Screens:</h6>
                         <a class="collapse-item" href="login.html">Login</a>
                         <a class="collapse-item" href="register.html">Register</a>
@@ -148,7 +151,7 @@
             <div class="sidebar-card">
                 <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="">
                 <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
+                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">upgrade to pro!</a>
             </div>
 
         </ul>
@@ -383,11 +386,11 @@
                     <!-- Content Row -->
                     <div class="row">
 
-                       @RenderBody()
+                        @RenderBody()
 
                     </div>
 
-                 
+
 
                 </div>
                 <!-- /.container-fluid -->
@@ -449,8 +452,11 @@
 
     <!-- Page level custom scripts -->
     @*<script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>*@
-
+        <script src="js/demo/chart-pie-demo.js"></script>*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/js/site.min.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 
 </html>
