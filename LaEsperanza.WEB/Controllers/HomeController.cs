@@ -10,6 +10,8 @@ namespace LaEsperanza.WEB.Controllers
 {
     public class HomeController : Controller
     {
+       
+        
         public IActionResult Index()
         {
             return View();
@@ -33,10 +35,9 @@ namespace LaEsperanza.WEB.Controllers
         {
             return View();
         }
-
-        public IActionResult Account()
+        public IActionResult Login()
         {
-            return View();
+
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

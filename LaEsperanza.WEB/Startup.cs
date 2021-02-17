@@ -70,7 +70,7 @@ namespace LaEsperanza.WEB
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Account}/{id?}");
+                    template: "{controller=Home}/{action=_LoginPartial}/{id?}");
             });
         }
     }
