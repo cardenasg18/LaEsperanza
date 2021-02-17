@@ -89,12 +89,11 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                   aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Components</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header text-gray-800">Tablas:</h6>
 
@@ -109,8 +108,7 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                   aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Utilities</span>
                 </a>
@@ -185,9 +183,6 @@
                 <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
                 <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">upgrade to pro!</a>
             </div>
-
-            <script src="https://account.snatchbot.me/script.js"></script>
-            <script>window.sntchChat.Init(158389)</script>
 
         </ul>
         <!-- End of Sidebar -->
@@ -419,8 +414,19 @@
 
     </div>
     <!-- End of Page Wrapper -->
+
+    <script id="chatbot" src="https://account.snatchbot.me/script.js"></script>
+    <script>window.sntchChat.Init(158389)</script>
+
+
+    <style>
+        #subirarriba {
+            margin-right: 1460px;
+        }
+    </style>
+
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
+    <a id="subirarriba" class="scroll-to-top rounded-circle" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
@@ -731,71 +737,16 @@
         </div>
     </div>
 
-    
-
     </main><!-- End #main -->
+    
+    @*class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion"*@
+
     <!-- ======= Footer ======= -->
-    <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
+    <footer id="footer" style="background-color:white">
 
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-info">
-                            <h3>Medicio</h3>
-                            <p>
-                                A108 Adam Street <br>
-                                NY 535022, USA<br><br>
-                                <strong>Phone:</strong> +1 5589 55488 55<br>
-                                <strong>Email:</strong> info@example.com<br>
-                            </p>
-                            <div class="social-links mt-3">
-                                <a href="https://www.twitter.com" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
-                                <a href="https://www.facebook.com" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
-                                <a href="https://www.instagram.com" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
-                                <a href="https://do.linkedin.com" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 footer-newsletter">
-                        <h4>Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
-                        </form>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="container" text-white>
-            <div class="copyright">
-                &copy; Copyright <strong><span>Medicio</span></strong>. All Rights Reserved
+        <div class="container">
+            <div class="copyright" style="background-color:white">
+                &copy; Copyright <strong><span>La Esperanza</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
                 <!-- All the links in the footer should remain intact. -->
