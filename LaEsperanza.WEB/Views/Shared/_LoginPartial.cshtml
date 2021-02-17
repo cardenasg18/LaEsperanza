@@ -3,11 +3,13 @@
 
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
+
     <style>
         #botones {
             margin-top: 15px;
         }
     </style>
+
 @if (SignInManager.IsSignedIn(User))
 {
     <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
@@ -24,10 +26,8 @@
 }
 else
 {
-
     <ul class="nav navbar-nav navbar-right">
         <li><a id="botones" style="margin-right:8px;" class="btn btn-success" asp-area="Identity" asp-page="/Account/Register">Registrar</a></li> 
         <li><a id="botones" class="btn btn-primary" asp-area="Identity" asp-page="/Account/Login">Login</a></li>
     </ul>
-
 }
