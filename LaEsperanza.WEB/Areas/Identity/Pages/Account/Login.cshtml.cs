@@ -36,15 +36,16 @@ namespace LaEsperanza.WEB.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
+            [Required(ErrorMessage = "El campo {0} es obligatorio")]
             [EmailAddress]
             public string Email { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "El campo {0} es obligatorio")]
             [DataType(DataType.Password)]
+            [Display(Name = "Contraseña")]
             public string Password { get; set; }
 
-            [Display(Name = "Remember me?")]
+            [Display(Name = "¿Recordar este usuario?")]
             public bool RememberMe { get; set; }
         }
 

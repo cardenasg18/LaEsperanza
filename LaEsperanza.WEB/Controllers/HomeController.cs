@@ -35,9 +35,10 @@ namespace LaEsperanza.WEB.Controllers
         {
             return View();
         }
-        public IActionResult Login()
-        {
 
+        public IActionResult Account()
+        {
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
