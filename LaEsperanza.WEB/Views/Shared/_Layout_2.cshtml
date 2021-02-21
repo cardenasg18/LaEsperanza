@@ -1,11 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Registrarse/Acceder La Esperanza";
-    Layout = "_Layout_2";
-}
-
-@*<partial name="_LoginPartial" />*@
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -13,6 +6,7 @@
     <title>@ViewData["Title"]</title>
 
     <environment include="Development">
+        <link href="/Medicio/assets/img/LogoFacultadCienciasdelaSalud.png" rel="icon">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
@@ -23,46 +17,42 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*<a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Example</a>*@
+            </div>
+            @*<div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    </ul>
+                </div>*@
+        </div>
+    </nav>
 
-<body class="bg-gradient-primary">
+    @*<center>*@
+        <div class="container body-content">
+            @RenderBody()
+        </div>
 
-    <style>
-        #principal {
-            margin-top: 50px;
-            margin-left: 500px;
-        }
-    </style>
+    @*</center>*@
+    <partial name="_CookieConsentPartial" />
 
-    <div class="text-center">
-        <h2>¡Bienvenido a la web de La Esperanza!</h2>
-    </div>
+
+
     <hr />
-
-    <style>
-        #imagen {
-            width: 275px;
-            height: 275px;
-            margin-left: 440px;
-        }
-    </style>
-
-    <img id="imagen" src="/images/farmacia-logo.jpg" alt="Logo" title="Logo de la medicina">
-
-    <div id="principal" class="align-items-center">
-        <a id="" class="btn btn-success" href="https://localhost:44301/Identity/Account/Register">Registrarse</a> ||
-        <a id="" class="btn btn-primary" href="https://localhost:44301/Identity/Account/Login">Acceder</a>
-    </div>
-
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <footer>
+        <p></p>
+    </footer>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -85,5 +75,6 @@
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
