@@ -2,6 +2,20 @@
     ViewData["Title"] = "Home Page";
 }
 
+<style>
+    #botoncovid19 {
+        margin-left: 1100px;
+    }
+</style>
+
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-3">
+    <h1 class="h3 mb-0 text-gray-800"></h1>
+    <a id="botoncovid19" href="#covid19" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <i class="fas fa-notes-medical fa-sm text-white"></i> Vizualizar casos COVID-19
+    </a>
+</div>
+
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -47,16 +61,17 @@
 <br />
 <br />
 
+<!--Inicio sección medicamentos-->
+
 <section id="cta" class="cta">
     <div class="container aos-init aos-animate " data-aos="zoom-in" style="max-width:1500px;">
 
         <div class="text-center">
             <h3>¿Te sientes mal?</h3>
-            <p> Si no te estás sintiendo tú mismo, si sientes algún malestar o dolor y no sabes qué medicamento podría funcionarte. ¡No te preocupes! Puedes contactarnos para que nosotros te recomendemos cual medicamento se adapta más a tus necesidades.</p>
+            <p> Si no te estás sintiendo tú mismo, si sientes algún malestar o dolor y no sabes qué medicamento podría funcionarte. ¡No te preocupes! Puedes contactarnos y nosotros te recomendamos el medicamento que más se adapte a tus necesidades.</p>
 
-            <a class="cta-btn scrollto" href="#appointment">Consultas</a>
+            <a class="cta-btn scrollto" href="#seccionmedicamentos">Medidicamentos básicos</a>
         </div>
-
     </div>
 </section>
 
@@ -73,7 +88,7 @@
             <div class="divider-custom-line"></div>
         </div>
         <!-- Portfolio Grid Items-->
-        <div class="row justify-content-center">
+        <div id="seccionmedicamentos" class="row justify-content-center">
             <!-- Portfolio Item 1-->
             <div class="col-md-6 col-lg-3 mb-5">
                 <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
@@ -161,117 +176,17 @@
     </div>
 </section>
 
-<section id="appointment" class="appointment section-bg">
-    <div class="container aos-init aos-animate" data-aos="fade-up" style="margin-left:100px;">
-
-        <div class="section-title">
-            <h2>Realiza una consulta</h2>
-            <p>Si no te estás sintiendo tú mismo, si sientes algún malestar o dolor y no sabes qué medicamento podría funcionarte. ¡No te preocupes! Puedes contactarnos para que nosotros te recomendemos cual medicamento se adapta más a tus necesidades.</p>
-        </div>
-
-        <form action="forms/appointment.php" method="post" role="form" class="php-email-form aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-            <div class="row">
-                <div class="col-md-4 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                    <div class="validate"></div>
-                </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
-                    <div class="validate"></div>
-                </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                    <div class="validate"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 form-group mt-3">
-                    <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                    <div class="validate"></div>
-                </div>
-                <div class="col-md-4 form-group mt-3">
-                    <select name="department" id="department" class="form-select">
-                        <option value="">Select Department</option>
-                        <option value="Department 1">Department 1</option>
-                        <option value="Department 2">Department 2</option>
-                        <option value="Department 3">Department 3</option>
-                    </select>
-                    <div class="validate"></div>
-                </div>
-                <div class="col-md-4 form-group mt-3">
-                    <select name="doctor" id="doctor" class="form-select">
-                        <option value="">Select Doctor</option>
-                        <option value="Doctor 1">Doctor 1</option>
-                        <option value="Doctor 2">Doctor 2</option>
-                        <option value="Doctor 3">Doctor 3</option>
-                    </select>
-                    <div class="validate"></div>
-                </div>
-            </div>
-
-            <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
-                <div class="validate"></div>
-            </div>
-            <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Consultar</button></div>
-        </form>
-
-    </div>
-</section>
-
-<section id="cta" class="cta">
-    <div class="container aos-init aos-animate " data-aos="zoom-in" style="max-width:1500px;">
-
-        <div class="text-center">
-            <h3>¿Qué es la COVID‑19?</h3>
-            <p> La COVID‑19 es la enfermedad infecciosa causada por el coronavirus que se ha descubierto más recientemente. Los síntomas más habituales de la COVID-19 son la fiebre, la tos seca y el cansancio. Si tiene síntomas leves, como tos o fiebre leves, generalmente no es necesario que busque atención médica. Quédese en casa, aíslese y vigile sus síntomas.</p>
-
-            <a class="cta-btn scrollto" href="#video">¿Cómo prevenirlo?</a>
-        </div>
-
-    </div>
-</section>
-
-
-
-<!--Aquí está el código del video centralizado-->
-
-<style>
-    #video {
-        margin-left: auto;
-        margin-right: auto;
-    }
-</style>
-
-<div id="video">
-    <div class="container">
-
-        <div class="section-title">
-            <div class="divider-custom"></div>
-            <h2>Ayúdanos a Prevenir el COVID-19</h2>
-            <video style="width:560px; height:315px;" controls>
-                <source src="/videos/COVID-19.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div>
-</div>
-
-
-<iframe src="https://www.bing.com/covid?ref=embedding" style="width: 100%; height: 900px; max-width: 1272px; border:none; margin-bottom:50px;"></iframe>
-
-
-
-<iframe src="https://www.bing.com/covid?ref=embedding" style="width: 100%; height: 900px; max-width: 1272px; border:none; margin-bottom:50px;"></iframe>
+<!--Fin sección medicamentos-->
+<!--Inicio sección ubicación-->
 
 <style>
     #ubicacion {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    #mapa {
+        margin-left: 125px;
     }
 </style>
 
@@ -284,18 +199,27 @@
 
             <a class="cta-btn scrollto" href="#ubicacion">¡Nuestra ubicación!</a>
         </div>
-
     </div>
 </section>
 
 <!-- ======= Contact Section ======= -->
 <section id="ubicacion" class="contact">
+
     <div class="container">
-        <div class="section-title"></div>
+        <div class="section-title">
+            <div class="divider-custom"></div>
+            <h2>Nuestra ubicación</h2>
+        </div>
     </div>
 
-    <div>
-        <iframe style="border:0; width: 100%; height: 350px;" src="https://satellite-map.gosur.com/es/?mylocation=1&ll=18.490854573124466,-69.96801264205851&z=15&t=streets" frameborder="0" allowfullscreen></iframe>
+
+    <div id="mapa">
+        <iframe width="800" height="350" frameborder="1" src="https://www.bing.com/maps/embed?h=350&w=800&cp=18.49783023873883~-69.96058878903281&lvl=15&typ=d&sty=r&src=SHELL&FORM=MBEDV8" scrolling="no">
+        </iframe>
+        <div style="white-space: nowrap; text-align: center; width: 800px; padding: 6px 0;">
+            <a class="btn btn-warning" id="largeMapLink" target="_blank" href="https://www.bing.com/maps?cp=18.49783023873883~-69.96058878903281&amp;sty=r&amp;lvl=15&amp;FORM=MBEDLD">Ver mapa más grande</a> &nbsp; | &nbsp;
+            <a class="btn btn-info" id="dirMapLink" target="_blank" href="https://www.bing.com/maps/directions?cp=18.49783023873883~-69.96058878903281&amp;sty=r&amp;lvl=15&amp;rtp=~pos.18.49783023873883_-69.96058878903281____&amp;FORM=MBEDLD">Obtener indicaciones</a>
+        </div>
     </div>
 
     <div class="container">
@@ -358,4 +282,58 @@
             </div>
         </div>
     </div>
-</section><!-- End Contact Section -->
+</section>
+
+<!-- End Contact Section -->
+<!--Fin sección ubicación-->
+<!--Sección COVID-19-->
+
+<section id="cta" class="cta">
+    <div class="container aos-init aos-animate " data-aos="zoom-in" style="max-width:1500px;">
+
+        <div class="text-center">
+            <h3>¿Qué es la COVID‑19?</h3>
+            <p> La COVID‑19 es la enfermedad infecciosa causada por el coronavirus que se ha descubierto más recientemente. Los síntomas más habituales de la COVID-19 son la fiebre, la tos seca y el cansancio. Si tiene síntomas leves, como tos o fiebre leves, generalmente no es necesario que busque atención médica. Quédese en casa, aíslese y vigile sus síntomas.</p>
+
+            <a class="cta-btn scrollto" href="#video">¿Cómo prevenirlo?</a>
+        </div>
+
+    </div>
+</section>
+
+<!--Aquí está el código del video centralizado-->
+
+<style>
+    #video {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #covid19 {
+        width: 100%;
+        height: 900px;
+        max-width: 1272px;
+        border: none;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<div id="video">
+    <div class="container">
+
+        <div class="section-title">
+            <div class="divider-custom"></div>
+            <h2>Ayúdanos a Prevenir el COVID-19</h2>
+            <video style="width:560px; height:315px;" controls>
+                <source src="/videos/COVID-19.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+
+<iframe id="covid19" src="https://www.bing.com/covid?ref=embedding"></iframe>
+
+<!--Fin de la sección COVID-19-->

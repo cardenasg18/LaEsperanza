@@ -35,7 +35,8 @@ namespace LaEsperanza.WEB.Controllers
         {
             return View();
         }
-        public IActionResult Login()
+
+        public IActionResult Account()
         {
             return View();
         }

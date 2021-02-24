@@ -177,13 +177,6 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-            <!-- Sidebar Message -->
-            <div class="sidebar-card">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">upgrade to pro!</a>
-            </div>
-
         </ul>
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
@@ -193,177 +186,46 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <style>
+                    #headerbar {
+                        background-color: #36b9cc;
+                    }
+
+                    #fechayhora {
+                        color: white;
+                        font-style: italic;
+                        font-weight: bold;
+                    }
+                </style>
+
+                <nav id="headerbar" class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                   aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    <!-- Inicio sección hora -->
 
+                    <div class="align-items-center d-none d-md-flex">
+                        <i class="fa fa-clock text-white"></i>
+                        <a id="fechayhora"> @DateTime.Now.DayOfWeek @DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year, @DateTime.Now.TimeOfDay.Hours:@DateTime.Now.Minute </a>
+                    </div>
+
+                    <!-- Fin sección hora -->
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                 aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                               placeholder="Search for..." aria-label="Search"
-                                               aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
-
-                        <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                 aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">
-                                    Alerts Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-success">
-                                            <i class="fas fa-donate text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
-                                        $290.29 has been deposited into your account!
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-warning">
-                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                            </div>
-                        </li>
-
-                        <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">7</span>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                 aria-labelledby="messagesDropdown">
-                                <h6 class="dropdown-header">
-                                    Message Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
-                                             alt="">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate">
-                                            Hi there! I am wondering if you can help me with a
-                                            problem I've been having.
-                                        </div>
-                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
-                                             alt="">
-                                        <div class="status-indicator"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">
-                                            I have the photos that you ordered last month, how
-                                            would you like them sent to you?
-                                        </div>
-                                        <div class="small text-gray-500">Jae Chun · 1d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
-                                             alt="">
-                                        <div class="status-indicator bg-warning"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">
-                                            Last month's report looks great, I am very happy with
-                                            the progress so far, keep up the good work!
-                                        </div>
-                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                                             alt="">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">
-                                            Am I a good boy? The reason I ask is because someone
-                                            told me that people say this to all dogs, even if they aren't good...
-                                        </div>
-                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-                            </div>
-                        </li>
+                        @*<div id="topbar" class="d-flex align-items-center fixed-top">
+                    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+                        <div class="align-items-center d-none d-md-flex">
+                            <i class="fa fa-clock"></i> Monday - Saturday, 8AM to 10PM
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-phone"></i> Call us now +1 5589 55488 55
+                        </div>
+                    </div>
+                </div>*@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -377,14 +239,6 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-3">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                            <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
-                        </a>
-                    </div>
 
                     <!-- Content Row -->
                     <div class="row">
@@ -422,7 +276,8 @@
 
     <style>
         #subirarriba {
-            margin-right: 1460px;
+            position: fixed;
+            right: auto;
         }
     </style>
 
@@ -742,22 +597,27 @@
     
     @*class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion"*@
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer" style="background-color:white">
+    <style>
+        #footercolor {
+            background-color: #36b9cc;
+            color:white;
+            font-weight:bold;
+        }
+    </style>
 
-        <div class="container">
-            <div class="copyright" style="background-color:white">
-                &copy; Copyright <strong><span>La Esperanza</span></strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
-                @*Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>*@
-            </div>
-        </div>
-    </footer><!-- End Footer -->
+    <!-- ======= Footer ======= -->
+    
+        <footer id="footer" style="background-color: #36b9cc;">
+
+                <div class="copyright" id="footercolor">
+                    &copy; Copyright <strong><span>La Esperanza</span></strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                </div>
+        </footer>
+
+    <!-- End Footer -->
+
     <!-- Bootstrap core JavaScript-->
     <script src="~/SB-Admin2/vendor/jquery/jquery.min.js"></script>
     <script src="~/SB-Admin2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
