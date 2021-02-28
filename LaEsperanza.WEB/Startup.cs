@@ -37,7 +37,15 @@ namespace LaEsperanza.WEB
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
+            services.AddDefaultIdentity<IdentityUser>(options =>
+            {
+                options.Password.RequiredLength = 8;
+                options.Password.RequiredUniqueChars = 3;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireUppercase = true;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireDigit = true;
+            })
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -70,7 +78,7 @@ namespace LaEsperanza.WEB
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Account}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
