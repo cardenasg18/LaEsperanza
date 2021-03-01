@@ -53,9 +53,9 @@
                 @Html.DisplayFor(modelItem => item.Supplier.SupplierName)
             </td>
             <td>
-                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.OrderId">Editar</a> |
-                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.OrderId">Detalles</a> |
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.OrderId">Eliminar</a>
+                @*<a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.OrderId">Editar</a> |*@
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.OrderId">Detalles</a>
+                @*<a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.OrderId">Eliminar</a>*@
             </td>
         </tr>
 }
