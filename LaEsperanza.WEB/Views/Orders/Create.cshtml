@@ -1,0 +1,54 @@
+﻿@model LaEsperanza.WEB.Models.Order
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h2>Orden</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SupplierId" class="control-label"></label>
+                <select asp-for="SupplierId" class ="form-control" asp-items="ViewBag.SupplierId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderTime" class="control-label"></label>
+                <input asp-for="OrderTime" class="form-control" />
+                <span asp-validation-for="OrderTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="comentario" class="control-label"></label>
+                <textarea asp-for="comentario" class="form-control"></textarea>
+                <span asp-validation-for="comentario" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <input type="hidden" asp-for="SubTotal" class="control-label"></input>
+                <input type="hidden" asp-for="SubTotal" class="form-control" />
+                <input type="hidden" asp-validation-for="SubTotal" class="text-danger"></input>
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="Valueimp" class="control-label"></input>
+                <input type="hidden" asp-for="Valueimp" class="form-control" />
+                <input  asp-validation-for="Valueimp" class="text-danger"></input>
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="TotalValue" class="control-label"></input>
+                <input type="hidden" asp-for="TotalValue" class="form-control" />
+                <span asp-validation-for="TotalValue" class="text-danger"></span>
+            </div>*@
+        <div class="form-group">
+            <input type="submit" value="Agregar" class="btn btn-primary" /> |
+            <a class="btn btn-dark" asp-action="Index">Regresar</a>
+        </div>
+        </form>
+    </div>
+</div>
+
+<div>
+</div>
+

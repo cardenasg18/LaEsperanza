@@ -50,8 +50,8 @@ namespace LaEsperanza.WEB
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<LaEsperanzaWEBContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("LaEsperanzaWEBContext")));
+            services.AddDbContext<ApplicationDbContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("ApplicationDbContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

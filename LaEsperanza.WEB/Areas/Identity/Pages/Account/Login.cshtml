@@ -3,7 +3,7 @@
 
 @{
     ViewData["Title"] = "Acceder";
-    Layout = "_Layout_2";
+   
 }
 
 <style>
@@ -19,7 +19,7 @@
     <div class="col-md-4">
         <section>
             <form method="post">
-                <h4 style="margin-left:10px;">Accede con tu cuenta</h4>
+                <h4 style="margin-left:10px;">Ingresa tu cuenta</h4>
                 <hr />
                 <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="form-group">
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <a style="margin-left:8px;" id="" class="btn btn-warning" href="https://localhost:44301">Regresar</a> ||
+                    <a style="margin-left:8px;" id="" class="btn btn-warning" href="https://localhost:44301">Regresar</a> |
                     <button type="submit" class="btn btn-primary" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">Acceder</button>
                 </div>
                 <div class="form-group">

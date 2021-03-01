@@ -10,23 +10,22 @@ using LaEsperanza.WEB.Models;
 
 namespace LaEsperanza.WEB.Controllers
 {
-    public class ItemsController : Controller
+    public class SuppliersController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ItemsController(ApplicationDbContext context)
+        public SuppliersController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Items
+        // GET: Suppliers
         public async Task<IActionResult> Index()
         {
-            var laEsperanzaWEBContext = _context.Items.Include(i => i.Clasification);
-            return View(await laEsperanzaWEBContext.ToListAsync());
+            return View(await _context.Suppliers.ToListAsync());
         }
 
-        // GET: Items/Details/5
+        // GET: Suppliers/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +33,39 @@ namespace LaEsperanza.WEB.Controllers
                 return NotFound();
             }
 
-            var item = await _context.Items
-                .Include(i => i.Clasification)
-                .FirstOrDefaultAsync(m => m.ItemId == id);
-            if (item == null)
+            var supplier = await _context.Suppliers
+                .FirstOrDefaultAsync(m => m.SupplierId == id);
+            if (supplier == null)
             {
                 return NotFound();
             }
 
-            return View(item);
+            return View(supplier);
         }
 
-        // GET: Items/Create
+        // GET: Suppliers/Create
         public IActionResult Create()
         {
-            ViewData["ClasificationId"] = new SelectList(_context.Clasifications, "ClasificationId", "ItemType");
             return View();
         }
 
-        // POST: Items/Create
+        // POST: Suppliers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ItemId,ClasificationId,ItemName,Comment")] Item item)
+        public async Task<IActionResult> Create([Bind("SupplierId,SupplierName,Mail,Telephone")] Supplier supplier)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(item);
+                _context.Add(supplier);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClasificationId"] = new SelectList(_context.Clasifications, "ClasificationId", "ItemType", item.ClasificationId);
-            return View(item);
+            return View(supplier);
         }
 
-        // GET: Items/Edit/5
+        // GET: Suppliers/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +73,22 @@ namespace LaEsperanza.WEB.Controllers
                 return NotFound();
             }
 
-            var item = await _context.Items.FindAsync(id);
-            if (item == null)
+            var supplier = await _context.Suppliers.FindAsync(id);
+            if (supplier == null)
             {
                 return NotFound();
             }
-            ViewData["ClasificationId"] = new SelectList(_context.Clasifications, "ClasificationId", "ItemType", item.ClasificationId);
-            return View(item);
+            return View(supplier);
         }
 
-        // POST: Items/Edit/5
+        // POST: Suppliers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ItemId,ClasificationId,ItemName,Comment")] Item item)
+        public async Task<IActionResult> Edit(int id, [Bind("SupplierId,SupplierName,Mail,Telephone")] Supplier supplier)
         {
-            if (id != item.ItemId)
+            if (id != supplier.SupplierId)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace LaEsperanza.WEB.Controllers
             {
                 try
                 {
-                    _context.Update(item);
+                    _context.Update(supplier);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ItemExists(item.ItemId))
+                    if (!SupplierExists(supplier.SupplierId))
                     {
                         return NotFound();
                     }
@@ -118,11 +113,10 @@ namespace LaEsperanza.WEB.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClasificationId"] = new SelectList(_context.Clasifications, "ClasificationId", "ItemType", item.ClasificationId);
-            return View(item);
+            return View(supplier);
         }
 
-        // GET: Items/Delete/5
+        // GET: Suppliers/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +124,30 @@ namespace LaEsperanza.WEB.Controllers
                 return NotFound();
             }
 
-            var item = await _context.Items
-                .Include(i => i.Clasification)
-                .FirstOrDefaultAsync(m => m.ItemId == id);
-            if (item == null)
+            var supplier = await _context.Suppliers
+                .FirstOrDefaultAsync(m => m.SupplierId == id);
+            if (supplier == null)
             {
                 return NotFound();
             }
 
-            return View(item);
+            return View(supplier);
         }
 
-        // POST: Items/Delete/5
+        // POST: Suppliers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var item = await _context.Items.FindAsync(id);
-            _context.Items.Remove(item);
+            var supplier = await _context.Suppliers.FindAsync(id);
+            _context.Suppliers.Remove(supplier);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ItemExists(int id)
+        private bool SupplierExists(int id)
         {
-            return _context.Items.Any(e => e.ItemId == id);
+            return _context.Suppliers.Any(e => e.SupplierId == id);
         }
     }
 }

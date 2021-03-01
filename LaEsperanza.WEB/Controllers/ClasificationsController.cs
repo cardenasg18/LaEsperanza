@@ -12,9 +12,9 @@ namespace LaEsperanza.WEB.Controllers
 {
     public class ClasificationsController : Controller
     {
-        private readonly LaEsperanzaWEBContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public ClasificationsController(LaEsperanzaWEBContext context)
+        public ClasificationsController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -22,7 +22,7 @@ namespace LaEsperanza.WEB.Controllers
         // GET: Clasifications
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Clasification.ToListAsync());
+            return View(await _context.Clasifications.ToListAsync());
         }
 
         // GET: Clasifications/Details/5
@@ -33,7 +33,7 @@ namespace LaEsperanza.WEB.Controllers
                 return NotFound();
             }
 
-            var clasification = await _context.Clasification
+            var clasification = await _context.Clasifications
                 .FirstOrDefaultAsync(m => m.ClasificationId == id);
             if (clasification == null)
             {
@@ -62,6 +62,7 @@ namespace LaEsperanza.WEB.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(clasification);
         }
 
@@ -73,7 +74,7 @@ namespace LaEsperanza.WEB.Controllers
                 return NotFound();
             }
 
-            var clasification = await _context.Clasification.FindAsync(id);
+            var clasification = await _context.Clasifications.FindAsync(id);
             if (clasification == null)
             {
                 return NotFound();
@@ -124,7 +125,7 @@ namespace LaEsperanza.WEB.Controllers
                 return NotFound();
             }
 
-            var clasification = await _context.Clasification
+            var clasification = await _context.Clasifications
                 .FirstOrDefaultAsync(m => m.ClasificationId == id);
             if (clasification == null)
             {
@@ -139,15 +140,15 @@ namespace LaEsperanza.WEB.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var clasification = await _context.Clasification.FindAsync(id);
-            _context.Clasification.Remove(clasification);
+            var clasification = await _context.Clasifications.FindAsync(id);
+            _context.Clasifications.Remove(clasification);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ClasificationExists(int id)
         {
-            return _context.Clasification.Any(e => e.ClasificationId == id);
+            return _context.Clasifications.Any(e => e.ClasificationId == id);
         }
     }
 }

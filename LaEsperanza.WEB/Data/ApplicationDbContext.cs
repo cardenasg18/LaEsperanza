@@ -18,5 +18,9 @@ namespace LaEsperanza.WEB.Data
         public DbSet<Item> Items { get; set; }
         public DbSet<Clasification> Clasifications { get; set; }
         public DbSet<DocumentType> DocumentTypes { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<LaEsperanza.WEB.Models.OrderDetail> OrderDetail { get; set; }
+        public DbSet<LaEsperanza.WEB.Models.Order> Order { get; set; }
     }
 }

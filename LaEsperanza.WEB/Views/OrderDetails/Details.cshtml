@@ -1,0 +1,48 @@
+﻿@model LaEsperanza.WEB.Models.OrderDetail
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrderDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Product)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProductName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UnitPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalValue)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TotalValue)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Order.OrderId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DetailId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

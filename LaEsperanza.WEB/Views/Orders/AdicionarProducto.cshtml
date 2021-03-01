@@ -1,0 +1,34 @@
+﻿@model LaEsperanza.WEB.Models.OrderDetail
+
+<h2>Detalle de orden</h2>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="AdicionarProducto">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProductiD" class="control-label"></label>
+                <select asp-for="ProductiD" class="form-control" asp-items="ViewBag.ProductiD"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="form-group" style="display:none;">
+                    <label asp-for="OrderId" class="control-label"></label>
+                    <input asp-for="OrderId" class="form-control" value="@ViewData["id"].ToString()" />
+                </div>
+            </div>
+            <div class="form-group">
+            <input type="submit" value="Agregar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

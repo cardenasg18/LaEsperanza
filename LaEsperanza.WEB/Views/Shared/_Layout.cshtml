@@ -13,8 +13,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="~/SB-Admin2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="~/SB-Admin2/css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -55,7 +54,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul style="background-color:#36b9cc" class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="https://localhost:44301/Home/Index">
@@ -91,16 +90,19 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <span>Componentes</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header text-gray-800">Tablas:</h6>
 
                         <a class="collapse-item text-black-40" asp-area="" asp-controller="Clasifications" asp-action="Index">Categorías</a>
-                        <a class="collapse-item text-black-40" asp-area="" asp-controller="DocumentTypes" asp-action="Index">Tipo Documento</a>
                         <a class="collapse-item text-black-40" asp-area="" asp-controller="Customers" asp-action="Index">Clientes</a>
+                        <a class="collapse-item text-black-40" asp-area="" asp-controller="DocumentTypes" asp-action="Index">Tipo Documento</a>
                         <a class="collapse-item text-black-40" asp-area="" asp-controller="Items" asp-action="Index">Medicamentos</a>
+                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Orders" asp-action="Index">Ordenes de compra</a>
+                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Products" asp-action="Index">Inventario</a>
+                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Suppliers" asp-action="Index">Suplidor</a>
 
                     </div>
                 </div>
@@ -110,14 +112,14 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>Usuario</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item text-black-40" asp-area="Identity" asp-page="/Account/Register">Register</a>
                         <a class="collapse-item text-black-40" asp-area="Identity" asp-page="/Account/Login">Login</a>
-                        
+
                     </div>
                 </div>
             </li>
@@ -126,51 +128,51 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
+            @*<div class="sidebar-heading">
+                    Addons
+                </div>*@
 
             <!-- Nav Item - Pages Collapse Menu -->
             @*<li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                   aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                       aria-expanded="true" aria-controls="collapsePages">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Pages</span>
+                    </a>
+                    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
 
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <partial name="_LoginPartial" />
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="/SB-Admin2/login.html">Login</a>
-                        <a class="collapse-item" href="/SB-Admin2/register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <partial name="_LoginPartial" />
+                            <h6 class="collapse-header">Login Screens:</h6>
+                            <a class="collapse-item" href="/SB-Admin2/login.html">Login</a>
+                            <a class="collapse-item" href="/SB-Admin2/register.html">Register</a>
+                            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                            <div class="collapse-divider"></div>
+                            <h6 class="collapse-header">Other Pages:</h6>
+                            <a class="collapse-item" href="404.html">404 Page</a>
+                            <a class="collapse-item" href="blank.html">Blank Page</a>
+                        </div>
                     </div>
-                </div>
-            </li>*@
+                </li>*@
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span>
-                </a>
-            </li>
+            @*<li class="nav-item">
+                    <a class="nav-link" href="charts.html">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Charts</span>
+                    </a>
+                </li>*@
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span>
-                </a>
-            </li>
+            @*<li class="nav-item">
+                    <a class="nav-link" href="tables.html">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Tables</span>
+                    </a>
+                </li>*@
 
             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+            @*<hr class="sidebar-divider d-none d-md-block">*@
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -187,18 +189,19 @@
 
                 <!-- Topbar -->
                 <style>
-                    #headerbar {
-                        background-color: #36b9cc;
-                    }
-
-                    #fechayhora {
-                        color: white;
-                        font-style: italic;
-                        font-weight: bold;
-                    }
+                                        /*      #headerbar {
+                                            background-color: #36b9cc;
+                                        }
+                    */
+                                        #fechayhora {
+                                            color: dark;
+                                            font-style: italic;
+                                            font-weight: bold;
+                                            margin-left: 8px;
+                                        }
                 </style>
 
-                <nav id="headerbar" class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
+                <nav id="headerbar" class="navbar bg-white navbar-expand navbar-light topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -211,7 +214,7 @@
                         <i class="fa fa-cross text-danger fa-3x"></i>
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <i class="fa fa-clock text-white"></i>
+                        <i class="fa fa-clock text-info"></i>
                         <a id="fechayhora"> @DateTime.Now.DayOfWeek @DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year, @DateTime.Now.TimeOfDay.Hours:@DateTime.Now.Minute </a>
                     </div>
 
@@ -220,15 +223,28 @@
                     <ul class="navbar-nav ml-auto">
 
                         @*<div id="topbar" class="d-flex align-items-center fixed-top">
-                    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
-                        <div class="align-items-center d-none d-md-flex">
-                            <i class="fa fa-clock"></i> Monday - Saturday, 8AM to 10PM
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <i class="bi bi-phone"></i> Call us now +1 5589 55488 55
-                        </div>
-                    </div>
-                </div>*@
+                            <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+                            <div class="align-items-center d-none d-md-flex">
+                                <i class="fa fa-clock"></i> Monday - Saturday, 8AM to 10PM
+                            </div>
+                            <div class="d-flex align-items-center">
+
+                                <i class="bi bi-phone"></i> Call us now +1 5589 55488 55
+                              </div>
+                              </div>
+                              </div>*@
+                        <a href="https://www.facebook.com" class="btn btn-primary btn-circle btn-default" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <a href="https://www.twitter.com" class="btn btn-info btn-circle btn-default" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <a href="https://www.instagram.com" style="background-color: #f72585" class="btn btn-circle btn-default" target="_blank">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -241,18 +257,20 @@
                 </nav>
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        @RenderBody()
-
+                <!-- Content Row -->
+                <div class="row" style="display: block;">
+                    <div class="card shadow mb-4">
+                        @*<div class="card-header py-6">
+                                <h6 class="m-0 font-weight-bold text-dark">INFORMACIONES</h6>
+                            </div>*@
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                @RenderBody()
+                            </div>
+                        </div>
                     </div>
-
-
-
                 </div>
+                <!-- end Content Row -->
                 <!-- /.container-fluid -->
 
             </div>
@@ -273,8 +291,8 @@
     </div>
     <!-- End of Page Wrapper -->
 
-    <script id="chatbot" src="https://account.snatchbot.me/script.js"></script>
-    <script>window.sntchChat.Init(158389)</script>
+    <script src="https://account.snatchbot.me/script.js"></script>
+    <script>window.sntchChat.Init(161233)</script>
 
 
     <style>
@@ -597,30 +615,28 @@
     </div>
 
     </main><!-- End #main -->
-    
     @*class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion"*@
 
     <style>
         #footercolor {
             background-color: #36b9cc;
-            color:white;
-            font-weight:bold;
+            color: white;
+            font-weight: bold;
         }
     </style>
 
     <!-- ======= Footer ======= -->
-    
-        <footer id="footer" style="background-color: #36b9cc;">
 
-                <div class="copyright" id="footercolor">
-                    &copy; Copyright <strong><span>La Esperanza</span></strong>. All Rights Reserved
-                </div>
-                <div class="credits">
-                </div>
-        </footer>
+    <footer id="footer" style="background-color: #36b9cc;">
+
+        <div class="copyright" id="footercolor">
+            &copy; Copyright <strong><span>La Esperanza</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+        </div>
+    </footer>
 
     <!-- End Footer -->
-
     <!-- Bootstrap core JavaScript-->
     <script src="~/SB-Admin2/vendor/jquery/jquery.min.js"></script>
     <script src="~/SB-Admin2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

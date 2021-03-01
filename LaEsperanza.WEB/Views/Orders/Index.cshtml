@@ -1,0 +1,63 @@
+﻿@model IEnumerable<LaEsperanza.WEB.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Ordenes <a class="btn btn-success" asp-action="Create">Agregar</a></h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderTime)
+            </th>
+            <th>
+                Observación
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valueimp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalValue)
+            </th>
+            <th>
+               Suplidor
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.comentario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valueimp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supplier.SupplierName)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.OrderId">Editar</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.OrderId">Detalles</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.OrderId">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

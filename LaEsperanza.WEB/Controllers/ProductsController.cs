@@ -10,23 +10,22 @@ using LaEsperanza.WEB.Models;
 
 namespace LaEsperanza.WEB.Controllers
 {
-    public class ItemsController : Controller
+    public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ItemsController(ApplicationDbContext context)
+        public ProductsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Items
+        // GET: Products
         public async Task<IActionResult> Index()
         {
-            var laEsperanzaWEBContext = _context.Items.Include(i => i.Clasification);
-            return View(await laEsperanzaWEBContext.ToListAsync());
+            return View(await _context.Products.ToListAsync());
         }
 
-        // GET: Items/Details/5
+        // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +33,39 @@ namespace LaEsperanza.WEB.Controllers
                 return NotFound();
             }
 
-            var item = await _context.Items
-                .Include(i => i.Clasification)
-                .FirstOrDefaultAsync(m => m.ItemId == id);
-            if (item == null)
+            var product = await _context.Products
+                .FirstOrDefaultAsync(m => m.ProductiD == id);
+            if (product == null)
             {
                 return NotFound();
             }
 
-            return View(item);
+            return View(product);
         }
 
-        // GET: Items/Create
+        // GET: Products/Create
         public IActionResult Create()
         {
-            ViewData["ClasificationId"] = new SelectList(_context.Clasifications, "ClasificationId", "ItemType");
             return View();
         }
 
-        // POST: Items/Create
+        // POST: Products/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ItemId,ClasificationId,ItemName,Comment")] Item item)
+        public async Task<IActionResult> Create([Bind("ProductiD,ProductName,Cantidad,Retiro,PriceP")] Product product)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(item);
+                _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClasificationId"] = new SelectList(_context.Clasifications, "ClasificationId", "ItemType", item.ClasificationId);
-            return View(item);
+            return View(product);
         }
 
-        // GET: Items/Edit/5
+        // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +73,22 @@ namespace LaEsperanza.WEB.Controllers
                 return NotFound();
             }
 
-            var item = await _context.Items.FindAsync(id);
-            if (item == null)
+            var product = await _context.Products.FindAsync(id);
+            if (product == null)
             {
                 return NotFound();
             }
-            ViewData["ClasificationId"] = new SelectList(_context.Clasifications, "ClasificationId", "ItemType", item.ClasificationId);
-            return View(item);
+            return View(product);
         }
 
-        // POST: Items/Edit/5
+        // POST: Products/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ItemId,ClasificationId,ItemName,Comment")] Item item)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductiD,ProductName,Cantidad,Retiro,PriceP")] Product product)
         {
-            if (id != item.ItemId)
+            if (id != product.ProductiD)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace LaEsperanza.WEB.Controllers
             {
                 try
                 {
-                    _context.Update(item);
+                    _context.Update(product);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ItemExists(item.ItemId))
+                    if (!ProductExists(product.ProductiD))
                     {
                         return NotFound();
                     }
@@ -118,11 +113,10 @@ namespace LaEsperanza.WEB.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClasificationId"] = new SelectList(_context.Clasifications, "ClasificationId", "ItemType", item.ClasificationId);
-            return View(item);
+            return View(product);
         }
 
-        // GET: Items/Delete/5
+        // GET: Products/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +124,30 @@ namespace LaEsperanza.WEB.Controllers
                 return NotFound();
             }
 
-            var item = await _context.Items
-                .Include(i => i.Clasification)
-                .FirstOrDefaultAsync(m => m.ItemId == id);
-            if (item == null)
+            var product = await _context.Products
+                .FirstOrDefaultAsync(m => m.ProductiD == id);
+            if (product == null)
             {
                 return NotFound();
             }
 
-            return View(item);
+            return View(product);
         }
 
-        // POST: Items/Delete/5
+        // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var item = await _context.Items.FindAsync(id);
-            _context.Items.Remove(item);
+            var product = await _context.Products.FindAsync(id);
+            _context.Products.Remove(product);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ItemExists(int id)
+        private bool ProductExists(int id)
         {
-            return _context.Items.Any(e => e.ItemId == id);
+            return _context.Products.Any(e => e.ProductiD == id);
         }
     }
 }

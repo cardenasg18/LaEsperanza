@@ -1,0 +1,56 @@
+﻿@model LaEsperanza.WEB.Models.Order
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<h3>¿Seguro que desea eliminar esto?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OrderTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.comentario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.comentario)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SubTotal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SubTotal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Valueimp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Valueimp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalValue)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TotalValue)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.Mail)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="OrderId" />
+        <input type="submit" value="Delete" class="btn btn-primary" /> |
+        <a class="btn btn-dark" asp-action="Index">Regresar</a>
+    </form>
+</div>

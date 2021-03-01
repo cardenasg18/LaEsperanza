@@ -12,9 +12,9 @@ namespace LaEsperanza.WEB.Controllers
 {
     public class DocumentTypesController : Controller
     {
-        private readonly LaEsperanzaWEBContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public DocumentTypesController(LaEsperanzaWEBContext context)
+        public DocumentTypesController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -22,7 +22,7 @@ namespace LaEsperanza.WEB.Controllers
         // GET: DocumentTypes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.DocumentType.ToListAsync());
+            return View(await _context.DocumentTypes.ToListAsync());
         }
 
         // GET: DocumentTypes/Details/5
@@ -33,7 +33,7 @@ namespace LaEsperanza.WEB.Controllers
                 return NotFound();
             }
 
-            var documentType = await _context.DocumentType
+            var documentType = await _context.DocumentTypes
                 .FirstOrDefaultAsync(m => m.DocumentTypeId == id);
             if (documentType == null)
             {
@@ -73,7 +73,7 @@ namespace LaEsperanza.WEB.Controllers
                 return NotFound();
             }
 
-            var documentType = await _context.DocumentType.FindAsync(id);
+            var documentType = await _context.DocumentTypes.FindAsync(id);
             if (documentType == null)
             {
                 return NotFound();
@@ -124,7 +124,7 @@ namespace LaEsperanza.WEB.Controllers
                 return NotFound();
             }
 
-            var documentType = await _context.DocumentType
+            var documentType = await _context.DocumentTypes
                 .FirstOrDefaultAsync(m => m.DocumentTypeId == id);
             if (documentType == null)
             {
@@ -139,15 +139,15 @@ namespace LaEsperanza.WEB.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var documentType = await _context.DocumentType.FindAsync(id);
-            _context.DocumentType.Remove(documentType);
+            var documentType = await _context.DocumentTypes.FindAsync(id);
+            _context.DocumentTypes.Remove(documentType);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool DocumentTypeExists(int id)
         {
-            return _context.DocumentType.Any(e => e.DocumentTypeId == id);
+            return _context.DocumentTypes.Any(e => e.DocumentTypeId == id);
         }
     }
 }

@@ -4,14 +4,16 @@ using LaEsperanza.WEB.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LaEsperanza.WEB.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210228220758_boboesloquehay")]
+    partial class boboesloquehay
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -103,101 +105,6 @@ namespace LaEsperanza.WEB.Data.Migrations
                     b.HasIndex("ClasificationId");
 
                     b.ToTable("Items");
-                });
-
-            modelBuilder.Entity("LaEsperanza.WEB.Models.Order", b =>
-                {
-                    b.Property<int>("OrderId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("OrderTime");
-
-                    b.Property<decimal>("SubTotal");
-
-                    b.Property<int>("SupplierId");
-
-                    b.Property<decimal>("TotalValue");
-
-                    b.Property<decimal>("Valueimp")
-                        .HasColumnType("decimal(18, 2)");
-
-                    b.Property<string>("comentario");
-
-                    b.HasKey("OrderId");
-
-                    b.HasIndex("SupplierId");
-
-                    b.ToTable("Order");
-                });
-
-            modelBuilder.Entity("LaEsperanza.WEB.Models.OrderDetail", b =>
-                {
-                    b.Property<int>("DetailId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("OrderId");
-
-                    b.Property<int>("ProductiD");
-
-                    b.Property<float>("Quantity");
-
-                    b.Property<decimal>("TotalValue");
-
-                    b.Property<decimal>("UnitPrice");
-
-                    b.HasKey("DetailId");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("ProductiD");
-
-                    b.ToTable("OrderDetail");
-                });
-
-            modelBuilder.Entity("LaEsperanza.WEB.Models.Product", b =>
-                {
-                    b.Property<int>("ProductiD")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Cantidad");
-
-                    b.Property<decimal>("PriceP");
-
-                    b.Property<string>("ProductName")
-                        .IsRequired()
-                        .HasMaxLength(30);
-
-                    b.Property<string>("Retiro")
-                        .HasMaxLength(200);
-
-                    b.HasKey("ProductiD");
-
-                    b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("LaEsperanza.WEB.Models.Supplier", b =>
-                {
-                    b.Property<int>("SupplierId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Mail")
-                        .IsRequired();
-
-                    b.Property<string>("SupplierName")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.Property<string>("Telephone")
-                        .IsRequired()
-                        .HasMaxLength(10);
-
-                    b.HasKey("SupplierId");
-
-                    b.ToTable("Suppliers");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -378,27 +285,6 @@ namespace LaEsperanza.WEB.Data.Migrations
                     b.HasOne("LaEsperanza.WEB.Models.Clasification", "Clasification")
                         .WithMany("Items")
                         .HasForeignKey("ClasificationId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("LaEsperanza.WEB.Models.Order", b =>
-                {
-                    b.HasOne("LaEsperanza.WEB.Models.Supplier", "Supplier")
-                        .WithMany("Orders")
-                        .HasForeignKey("SupplierId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("LaEsperanza.WEB.Models.OrderDetail", b =>
-                {
-                    b.HasOne("LaEsperanza.WEB.Models.Order", "Order")
-                        .WithMany("OrderDetails")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("LaEsperanza.WEB.Models.Product", "Product")
-                        .WithMany("OrderDetails")
-                        .HasForeignKey("ProductiD")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

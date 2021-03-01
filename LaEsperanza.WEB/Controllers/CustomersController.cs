@@ -12,9 +12,9 @@ namespace LaEsperanza.WEB.Controllers
 {
     public class CustomersController : Controller
     {
-        private readonly LaEsperanzaWEBContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public CustomersController(LaEsperanzaWEBContext context)
+        public CustomersController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -22,8 +22,8 @@ namespace LaEsperanza.WEB.Controllers
         // GET: Customers
         public async Task<IActionResult> Index()
         {
-            var laEsperanzaWEBContext = _context.Customer.Include(c => c.DocumentType);
-            return View(await laEsperanzaWEBContext.ToListAsync());
+            var customer1 = _context.Customers.Include(c => c.DocumentType);
+            return View(await customer1.ToListAsync());
         }
 
         // GET: Customers/Details/5
@@ -34,7 +34,7 @@ namespace LaEsperanza.WEB.Controllers
                 return NotFound();
             }
 
-            var customer = await _context.Customer
+            var customer = await _context.Customers
                 .Include(c => c.DocumentType)
                 .FirstOrDefaultAsync(m => m.CustomerID == id);
             if (customer == null)
@@ -77,7 +77,7 @@ namespace LaEsperanza.WEB.Controllers
                 return NotFound();
             }
 
-            var customer = await _context.Customer.FindAsync(id);
+            var customer = await _context.Customers.FindAsync(id);
             if (customer == null)
             {
                 return NotFound();
@@ -130,7 +130,7 @@ namespace LaEsperanza.WEB.Controllers
                 return NotFound();
             }
 
-            var customer = await _context.Customer
+            var customer = await _context.Customers
                 .Include(c => c.DocumentType)
                 .FirstOrDefaultAsync(m => m.CustomerID == id);
             if (customer == null)
@@ -146,15 +146,15 @@ namespace LaEsperanza.WEB.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var customer = await _context.Customer.FindAsync(id);
-            _context.Customer.Remove(customer);
+            var customer = await _context.Customers.FindAsync(id);
+            _context.Customers.Remove(customer);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool CustomerExists(int id)
         {
-            return _context.Customer.Any(e => e.CustomerID == id);
+            return _context.Customers.Any(e => e.CustomerID == id);
         }
     }
 }

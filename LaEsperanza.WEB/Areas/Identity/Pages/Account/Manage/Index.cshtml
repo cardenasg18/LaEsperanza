@@ -2,17 +2,18 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Mi perfil";
-    Layout = "_Layout_2";
+
+   
 }
 
-<style>
+@*<style>
     #userindex {
         margin-left: 450px;
     }
-</style>
+</style>*@
 
 
-<h2 style="margin-left:550px;">@ViewData["Title"]</h2>
+<h2>@ViewData["Title"]</h2>
 
 <hr />
 
@@ -20,7 +21,7 @@
 <div id="userindex" class="row">
     <div class="col-md-6">
 
-        <h4 style="margin-left:80px;">Datos del perfil</h4>
+        <h4 style="margin-left:110px;">Datos del perfil</h4>
         <hr />
 
         <form id="profile-form" method="post">
@@ -53,8 +54,10 @@
             </div>
             <hr />
 
-            <a style="margin-left:75px;" class="btn btn-warning" href="https://localhost:44301/Home/Index">Regresar</a> ||
+            <a style="margin-left:75px;" class="btn btn-warning" href="https://localhost:44301/Home/Index">Regresar</a> |
             <button type="submit" class="btn btn-primary">Guardar</button>
+            <br />
+            <br />
         </form>
     </div>
 </div>

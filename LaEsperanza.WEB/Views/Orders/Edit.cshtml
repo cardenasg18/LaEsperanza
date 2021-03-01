@@ -1,0 +1,55 @@
+﻿@model LaEsperanza.WEB.Models.Order
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editar</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="OrderId" />
+            <div class="form-group">
+                <label asp-for="SupplierId" class="control-label"></label>
+                <select asp-for="SupplierId" class="form-control" asp-items="ViewBag.SupplierId"></select>
+                <span asp-validation-for="SupplierId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderTime" class="control-label"></label>
+                <input asp-for="OrderTime" class="form-control" />
+                <span asp-validation-for="OrderTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="comentario" class="control-label"></label>
+                <textarea asp-for="comentario" class="form-control"></textarea>
+                <span asp-validation-for="comentario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubTotal" class="control-label"></label>
+                <input asp-for="SubTotal" class="form-control" />
+                <span asp-validation-for="SubTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valueimp" class="control-label"></label>
+                <input asp-for="Valueimp" class="form-control" />
+                <span asp-validation-for="Valueimp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalValue" class="control-label"></label>
+                <input asp-for="TotalValue" class="form-control" />
+                <span asp-validation-for="TotalValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-dark" asp-action="Index">Regresar</a>
+</div>
+
