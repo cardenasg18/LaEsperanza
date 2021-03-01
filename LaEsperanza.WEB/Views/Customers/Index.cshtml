@@ -4,11 +4,9 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Clientes <a class="btn btn-warning" asp-action="Create">Agregar</a></h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -25,7 +23,7 @@
                 @Html.DisplayNameFor(model => model.Phone)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DocumentType)
+                Tipo de documento
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Document)
@@ -55,9 +53,9 @@
                 @Html.DisplayFor(modelItem => item.Document)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.CustomerID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CustomerID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CustomerID">Delete</a>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.CustomerID">Editar</a> |
+                <a  class="btn btn-dark" asp-action="Details" asp-route-id="@item.CustomerID">Detalles</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.CustomerID">Eliminar</a>
             </td>
         </tr>
 }

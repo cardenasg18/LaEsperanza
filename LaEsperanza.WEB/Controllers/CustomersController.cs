@@ -22,8 +22,8 @@ namespace LaEsperanza.WEB.Controllers
         // GET: Customers
         public async Task<IActionResult> Index()
         {
-            var customer1 = _context.Customers.Include(c => c.DocumentType);
-            return View(await customer1.ToListAsync());
+            var applicationDbContext = _context.Customers.Include(c => c.DocumentType);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Customers/Details/5
@@ -48,7 +48,7 @@ namespace LaEsperanza.WEB.Controllers
         // GET: Customers/Create
         public IActionResult Create()
         {
-            ViewData["DocumentTypeId"] = new SelectList(_context.Set<DocumentType>(), "DocumentTypeId", "TypeDocument");
+            ViewData["DocumentTypeId"] = new SelectList(_context.DocumentTypes, "DocumentTypeId", "TypeDocument");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace LaEsperanza.WEB.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DocumentTypeId"] = new SelectList(_context.Set<DocumentType>(), "DocumentTypeId", "TypeDocument", customer.DocumentTypeId);
+            ViewData["DocumentTypeId"] = new SelectList(_context.DocumentTypes, "DocumentTypeId", "TypeDocument", customer.DocumentTypeId);
             return View(customer);
         }
 
@@ -82,7 +82,7 @@ namespace LaEsperanza.WEB.Controllers
             {
                 return NotFound();
             }
-            ViewData["DocumentTypeId"] = new SelectList(_context.Set<DocumentType>(), "DocumentTypeId", "TypeDocument", customer.DocumentTypeId);
+            ViewData["DocumentTypeId"] = new SelectList(_context.DocumentTypes, "DocumentTypeId", "TypeDocument", customer.DocumentTypeId);
             return View(customer);
         }
 
@@ -118,7 +118,7 @@ namespace LaEsperanza.WEB.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DocumentTypeId"] = new SelectList(_context.Set<DocumentType>(), "DocumentTypeId", "TypeDocument", customer.DocumentTypeId);
+            ViewData["DocumentTypeId"] = new SelectList(_context.DocumentTypes, "DocumentTypeId", "TypeDocument", customer.DocumentTypeId);
             return View(customer);
         }
 

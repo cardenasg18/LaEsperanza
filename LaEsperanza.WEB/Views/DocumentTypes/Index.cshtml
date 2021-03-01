@@ -4,11 +4,9 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Tipo de documento <a class="btn btn-warning" asp-action="Create">Agregar</a></h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -25,9 +23,9 @@
                 @Html.DisplayFor(modelItem => item.TypeDocument)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.DocumentTypeId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.DocumentTypeId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.DocumentTypeId">Delete</a>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.DocumentTypeId">Editar</a> |
+                <a  class="btn btn-dark" asp-action="Details" asp-route-id="@item.DocumentTypeId">Detalles</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.DocumentTypeId">Eliminar</a>
             </td>
         </tr>
 }

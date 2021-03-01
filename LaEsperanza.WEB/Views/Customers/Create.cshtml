@@ -4,9 +4,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
 
-<h4>Customer</h4>
+
+<h2>Cliente</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -42,15 +42,17 @@
                 <span asp-validation-for="Document" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-warning" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-primary" asp-action="Index">Regresar</a>
 </div>
+<br />
+<br />
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

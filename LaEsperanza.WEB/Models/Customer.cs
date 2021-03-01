@@ -27,10 +27,10 @@ namespace LaEsperanza.WEB.Models
         [DataType(DataType.EmailAddress, ErrorMessage = "Correo invalido.")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Este campo es obligatorio.")]
         [Display(Name = "Teléfono")]
-        [MaxLength(10, ErrorMessage ="Número no válido")]
-        public int Phone { get; set; }
+        [MaxLength(10, ErrorMessage = "Número incorrecto.")]
+        [RegularExpression("([0-9][0-9]*)", ErrorMessage = "Sólo debe Colocar Números")]
+        public string Phone { get; set; }
 
         [Required]
         [Display(Name = "Tipo Documento")]
