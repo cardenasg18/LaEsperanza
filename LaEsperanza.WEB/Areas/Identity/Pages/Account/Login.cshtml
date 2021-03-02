@@ -46,9 +46,9 @@
                     <button type="submit" class="btn btn-primary" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">Acceder</button>
                 </div>
                 <div class="form-group">
-                    <p>
+                    @*<p>
                         <a class="btn btn-info" asp-page="./ForgotPassword">¿Olvidaste tu contraseña?</a>
-                    </p>
+                    </p>*@
                     <p>
                         <a style="margin-left:7px;" class="btn btn-success" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">¿No tienes una cuenta?</a>
                     </p>
