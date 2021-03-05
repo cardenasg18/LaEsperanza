@@ -1,45 +1,635 @@
-﻿@model IEnumerable<LaEsperanza.WEB.Models.Item>
+﻿<section class="page-section portfolio" id="portfolio">
+    <div class="container" style="margin-left:90px; margin-left:20px;">
+        <!-- Portfolio Section Heading-->
+        <h2 style="margin-top:0%;" class="page-section-heading text-center text-uppercase text-secondary mb-0">Medicamentos</h2>
+        <!-- Icon Divider-->
+        <div style="margin-bottom: 10%; " class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><svg class="svg-inline--fa fa-star fa-w-18" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg><!-- <i class="fas fa-star"></i> Font Awesome fontawesome.com --></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Portfolio Grid Items-->
+        <div id="seccionmedicamentos" class="row justify-content-center">
+            <!-- Portfolio Item 1-->
+            <div class="col-md-6 col-lg-3 mb-5">
+                <hr style="border-color:#36b9cc" />
+                <dt style="margin-left:20px;">
+                    TÉ ANTIGRIPAL ANTIFLUDES
+                </dt>
+                <hr style="border-color:#36b9cc" />
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                    </div>
+                    @*<img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="">*@
+                    <img class="img-fluid" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/1/2138582-A_1.jpg" alt="">
+                </div>
+            </div>
 
-@{
-    ViewData["Title"] = "Index";
-}
+            <!-- Portfolio Item 2-->
+            <div class="col-md-6 col-lg-3 mb-5">
+                <hr style="border-color:#36b9cc" />
+                <dt style="margin-left:30px;">
+                    VITAMINA CEBION 12 UND
+                </dt>
+                <hr style="border-color:#36b9cc" />
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                    </div>
+                    @*<img class="img-fluid" src="assets/img/portfolio/cake.png" alt="">*@
+                    <img class="img-fluid" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/1/2110992-A_1.jpg" alt="">
+                </div>
+            </div>
+            <!-- Portfolio Item 3-->
+            <div class="col-md-6 col-lg-3 mb-5">
+                <hr style="border-color:#36b9cc" />
+                <dt style="margin-left:55px;">
+                    Agua Oxigenada
+                </dt>
+                <hr style="border-color:#36b9cc" />
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                    </div>
+                    @*<img class="img-fluid" src="assets/img/portfolio/circus.png" alt="">*@
+                    <img class="img-fluid" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/1/2186633-A_3.jpg" alt="">
+                </div>
+            </div>
+            <!-- Portfolio Item 4-->
+            <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
+                <hr style="border-color:#36b9cc" />
+                <dt style="margin-left:65px;">
+                    Vick VapoRub
+                </dt>
+                <hr style="border-color:#36b9cc" />
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                    </div>
+                    @*<img class="img-fluid" src="assets/img/portfolio/game.png" alt="">*@
+                    <img class="img-fluid" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/0/2089710-A_3.jpg" alt="">
 
-<h2>Medicamentos <a class="btn btn-warning" asp-action="Create">Agregar</a></h2>
+                </div>
+            </div>
+            <!-- Portfolio Item 5-->
+            <div class="col-md-6 col-lg-3 mb-5 mb-md-0">
+                <hr style="border-color:#36b9cc" />
+                <dt style="margin-left:65px;">
+                    PEPTO BISMOL
+                </dt>
+                <hr style="border-color:#36b9cc" />
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                    </div>
+                    @*<img class="img-fluid" src="assets/img/portfolio/safe.png" alt="">*@
+                    <img class="img-fluid" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/2/2200997-A_1.jpg" alt="">
+                </div>
+            </div>
+            <!-- Portfolio Item 6-->
+            <div class="col-md-6 col-lg-3">
+                <hr style="border-color:#36b9cc" />
+                <dt style="margin-left:70px;">
+                    BRONCOCHEM
+                </dt>
+                <hr style="border-color:#36b9cc" />
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                    </div>
+                    @*<img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="">*@
+                    <img class="img-fluid" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/0/2093535-A_1.jpg" alt="">
+                </div>
+            </div>
+            <!-- Portfolio Item 7-->
+            <div class="col-md-6 col-lg-3">
+                <hr style="border-color:#36b9cc" />
+                <dt style="margin-left:80px;">
+                    ALGODÓN
+                </dt>
+                <hr style="border-color:#36b9cc" />
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal7">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                    </div>
+                    @*<img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="">*@
+                    <img class="img-fluid" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/1/2151913-A_1.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- Portfolio Item 8-->
+            <div class="col-md-6 col-lg-3">
+                <hr style="border-color:#36b9cc" />
+                <dt style="margin-left:100px;">
+                    TALCO
+                </dt>
+                <hr style="border-color:#36b9cc" />
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal8">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                    </div>
+                    @*<img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="">*@
+                    <img class="img-fluid" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/0/2007140-A_1.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- Portfolio Item 9-->
+            <div class="col-md-6 col-lg-3">
+                <hr style="border-color:#36b9cc" />
+                <dt style="margin-left:30px;">
+                    ANTIACIDO EN TABLETAS
+                </dt>
+                <hr style="border-color:#36b9cc" />
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal9">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                    </div>
+                    @*<img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="">*@
+                    <img class="img-fluid" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/0/2084234-A_3.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- Portfolio Item 10-->
+            <div class="col-md-6 col-lg-3">
+                <hr style="border-color:#36b9cc" />
+                <dt style="margin-left:85px;">
+                    Bay Rum
+                </dt>
+                <hr style="border-color:#36b9cc" />
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal10">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                    </div>
+                    @*<img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="">*@
+                    <img class="img-fluid" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/0/2045784-A_3.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- Portfolio Item 11-->
+            <div class="col-md-6 col-lg-3">
+                <hr style="border-color:#36b9cc" />
+                <dt style="margin-left:75px;">
+                    Alka-Seltzer
+                </dt>
+                <hr style="border-color:#36b9cc" />
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal11">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                    </div>
+                    @*<img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="">*@
+                    <img class="img-fluid" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/0/2017061-A_3.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- Portfolio Item 12-->
+            <div class="col-md-6 col-lg-3">
+                <hr style="border-color:#36b9cc" />
+                <dt style="margin-left:17px;">
+                    JARABE DE BERRO Y CEBOLLA
+                </dt>
+                <hr style="border-color:#36b9cc" />
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal12">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><svg class="svg-inline--fa fa-plus fa-w-14 fa-3x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus fa-3x"></i> Font Awesome fontawesome.com --></div>
+                    </div>
+                    @*<img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="">*@
+                    <img class="img-fluid" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/0/2014384-A_3.jpg" alt="">
+                </div>
+            </div>
 
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Clasification)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Comment)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Clasification.ItemType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ItemName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comment)
-            </td>
-            <td>
-                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.ItemId">Editar</a> |
-                <a  class="btn btn-dark" asp-action="Details" asp-route-id="@item.ItemId">Detalles</a> |
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ItemId">Eliminar</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+
+        </div>
+    </div>
+</section>
+
+
+
+<div class="portfolio-modal modal fadeIn" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal1Label">TÉ ANTIGRIPAL ANTIFLUDES</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <img style="max-width:45%" class="img-fluid rounded mb-5" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/1/2138582-A_1.jpg" alt="" />
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Está indicado en el tratamiento de la gripe por virus influenza del grupo A, incluyendo subtipos H3N2, H2N2 y H1N1 ya que posee acción antiviral específica, analgésica, antipirética, descongestiva y antihistamínica.</p>
+                            <button class="btn btn-danger" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Cerrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Portfolio Modal 2-->
+<div class="portfolio-modal modal fadeIn" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal2Label">VITAMINA CEBION 12 UND</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <img style="max-width:45%" class="img-fluid rounded mb-5" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/1/2110992-A_1.jpg" />
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Recupera los niveles séricos en pacientes con mayor tasa de eliminación renal de esta vitamina como son fumadores, alcohólicos, diabéticos.</p>
+                            <button class="btn btn-danger" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Cerrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Portfolio Modal 3-->
+<div class="portfolio-modal modal fadeIn" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal3Label">Agua Oxigenada</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <img style="max-width:45%" class="img-fluid rounded mb-5" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/1/2186633-A_3.jpg" />
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Agua oxigenada al 3%. Germicida, tópico para limpiar heridas. Para uso externo solamente.</p>
+                            <button class="btn btn-danger" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Cerrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Portfolio Modal 4-->
+<div class="portfolio-modal modal fadeIn" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal4Label">Vick VapoRub</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <img style="max-width:45%" class="img-fluid rounded mb-5" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/0/2089710-A_3.jpg" alt="" />
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Ungüento mentolado (alcanfor, mentol, eucalipto) para calmar algunos síntomas del resfriado.</p>
+                            <button class="btn btn-danger" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Cerrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Portfolio Modal 5-->
+<div class="portfolio-modal modal fadeIn" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal5Label">Acidez estomacal</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <img style="max-width:45%" class="img-fluid rounded mb-5" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/2/2200997-A_1.jpg" alt="" />
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Cuando tiene problemas estomacales, la fórmula mejorada de Pepto recubre su estómago y proporciona un alivio rápido de las náuseas, la acidez estomacal, la indigestión, el malestar estomacal y la diarrea. Alivia la diarrea y el malestar estomacal debido a la indulgencia excesiva en los alimentos y bebidas, que incluyen: ardor de estómago, indigestión, náuseas, gases, eructos y saciedad.</p>
+                            <button class="btn btn-danger" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Clerrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Portfolio Modal 6-->
+<div class="portfolio-modal modal fadeIn" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal6Label">Medicamento para la TOS</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <img style="max-width:45%" class="img-fluid rounded mb-5" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/0/2093535-A_1.jpg" alt="" />
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">
+                                Dosis:
+
+                                Adultos:1 cucharadita (5mL) cada 8 horas.
+
+                                Niños mayores de 3 meses: 1/2 cucharadita (2,5 mL) cada 8 horas.
+
+                                Contraindicación: Hipersensibilidad a sus componentes.
+
+                                Advertencias. Uso durante el embarazo: Tomar en cuenta beneficios versus riesgos.
+
+                                Uso durante la lactancia: No hay información disponible.
+
+                                Precauciones: No hay suficientes datos para el uso de este medicamento durante el embarazo. No hay indicaciones de un efecto nocivo en los experimentos en animales. Así mismo, en lactancia. Este producto no debe ser administrado a niños menores de 3 meses de edad.
+                            </p>
+                            <button class="btn btn-danger" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Cerrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Portfolio Modal 7-->
+<div class="portfolio-modal modal fadeIn" id="portfolioModal7" tabindex="-1" role="dialog" aria-labelledby="portfolioModal7Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal7Label">Algodón</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <img style="max-width:45%" class="img-fluid rounded mb-5" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/1/2151913-A_1.jpg" alt="" />
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Fabricadas con algodón orgánico, estas bolas de algodón de tamaño triple son seguras, suaves y extra absorbentes. Sea amable con su piel con la suavidad del algodón real.</p>
+                            <button class="btn btn-danger" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Clerrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Modal 8-->
+<div class="portfolio-modal modal fadeIn" id="portfolioModal8" tabindex="-1" role="dialog" aria-labelledby="portfolioModal8Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal8Label">Talco</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <img style="max-width:45%" class="img-fluid rounded mb-5" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/0/2007140-A_1.jpg" alt="" />
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Polvo medicado antibacterial y fungicida. Ayuda a aliviar irritaciones menores de la piel. Absorbe la humedad para aliviar las molestias en los pies.</p>
+                            <button class="btn btn-danger" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Clerrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Modal 9-->
+<div class="portfolio-modal modal fadeIn" id="portfolioModal9" tabindex="-1" role="dialog" aria-labelledby="portfolioModal8Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal9Label">ANTIACIDO EN TABLETAS</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <img style="max-width:45%" class="img-fluid rounded mb-5" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/0/2084234-A_3.jpg" alt="" />
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Antiácido con calcio en tabletas masticables, extra fuerte. Rápido alivio de dolor estomacal, acidez e indigestión. Sabores variados de frutas.</p>
+                            <button class="btn btn-danger" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Clerrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Modal 10-->
+<div class="portfolio-modal modal fadeIn" id="portfolioModal10" tabindex="-1" role="dialog" aria-labelledby="portfolioModal8Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal8Label">Bay Rum</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <img style="max-width:45%" class="img-fluid rounded mb-5" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/0/2045784-A_3.jpg" alt="" />
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Alcohol para frotar. Estimulante aromático que al frotarse en la piel ofrece sensación de frescura. Para uso externo.</p>
+                            <button class="btn btn-danger" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Clerrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Modal 11-->
+<div class="portfolio-modal modal fadeIn" id="portfolioModal11" tabindex="-1" role="dialog" aria-labelledby="portfolioModal8Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal11Label">Alka-Seltzer</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <img style="max-width:45%" class="img-fluid rounded mb-5" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/0/2017061-A_3.jpg" alt="" />
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Es un medicamento antiácido en forma de comprimido efervescente de toma oral, indicado para el alivio sintomático de las molestias gástricas ocasionales relacionadas con la hiperacidez, tales como la acidez y el ardor de estómago.</p>
+                            <button class="btn btn-danger" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Clerrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Modal 12-->
+<div class="portfolio-modal modal fadeIn" id="portfolioModal12" tabindex="-1" role="dialog" aria-labelledby="portfolioModal8Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal12Label">JARABE DE BERRO Y CEBOLLA</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                            <img style="max-width:45%" class="img-fluid rounded mb-5" src="https://supermercadosnacional.com/pub/media/catalog/product/cache/3412d0f9be45e47e6d60067e99299885/2/0/2014384-A_3.jpg" alt="" />
+                            <!-- Portfolio Modal - Text-->
+                            <p class="mb-5">Jarabe de berro, cebolla, rábano y miel especialmente indicado para las enfermedades de las vías respiratorias, catarros, bronquitis, tos rebelde.</p>
+                            <button class="btn btn-danger" data-dismiss="modal">
+                                <i class="fas fa-times fa-fw"></i>
+                                Clerrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
