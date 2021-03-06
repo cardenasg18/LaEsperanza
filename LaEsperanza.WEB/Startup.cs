@@ -17,6 +17,8 @@ namespace LaEsperanza.WEB
 {
     public class Startup
     {
+        public const int requiredLeghtForPassword = 8;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -38,12 +40,14 @@ namespace LaEsperanza.WEB
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<IdentityUser, IdentityRole>(options => {
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            {
                 options.Lockout.MaxFailedAccessAttempts = 5;
 
-                options.Password.RequiredLength = 8;
+                options.Password.RequiredLength = requiredLeghtForPassword;
                 options.Password.RequiredUniqueChars = 4;
                 options.Password.RequireLowercase = true;
+                options.Password.RequireDigit = true;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = true;
 
@@ -53,7 +57,8 @@ namespace LaEsperanza.WEB
                .AddRoles<IdentityRole>()
                .AddRoleManager<RoleManager<IdentityRole>>()
                .AddDefaultTokenProviders()
-               .AddEntityFrameworkStores<ApplicationDbContext>();
+               .AddEntityFrameworkStores<ApplicationDbContext>()
+               .AddErrorDescriber<MyErrorDescriber>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
@@ -89,4 +94,26 @@ namespace LaEsperanza.WEB
             });
         }
     }
+
+    public class MyErrorDescriber : IdentityErrorDescriber
+    {
+        public override IdentityError PasswordRequiresUpper()
+        {
+            return new IdentityError()
+            {
+                Code = nameof(PasswordRequiresUpper),
+                Description = "El campo contraseña debe contener al menos una letra mayúscula."
+            };
+        }
+
+        public override IdentityError PasswordRequiresDigit()
+        {
+            return new IdentityError()
+            {
+                Code = nameof(PasswordRequiresDigit),
+                Description = "La contraseña debe contener al menos un número."
+            };
+        }
+    }
+
 }

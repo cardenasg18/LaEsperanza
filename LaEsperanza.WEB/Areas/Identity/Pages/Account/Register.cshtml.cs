@@ -45,7 +45,7 @@ namespace LaEsperanza.WEB.Areas.Identity.Pages.Account
             public string Email { get; set; }
 
             [Required(ErrorMessage = "El campo {0} es obligatorio")]
-            [StringLength(100, ErrorMessage = "La {0} debe tener al menos {2} y un máximo de {1} caracteres de largo.", MinimumLength = 8)]
+            [StringLength(100, ErrorMessage = "La {0} debe tener al menos {2} y un máximo de {1} caracteres de largo.", MinimumLength = Startup.requiredLeghtForPassword)]
             [DataType(DataType.Password)]
             [Display(Name = "Contraseña")]
             public string Password { get; set; }
