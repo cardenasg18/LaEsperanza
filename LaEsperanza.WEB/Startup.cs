@@ -37,16 +37,23 @@ namespace LaEsperanza.WEB
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options =>
-            {
+
+            services.AddIdentity<IdentityUser, IdentityRole>(options => {
+                options.Lockout.MaxFailedAccessAttempts = 5;
+
                 options.Password.RequiredLength = 8;
-                options.Password.RequiredUniqueChars = 3;
+                options.Password.RequiredUniqueChars = 4;
                 options.Password.RequireLowercase = true;
-                options.Password.RequireUppercase = true;
                 options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireDigit = true;
+                options.Password.RequireUppercase = true;
+
+                options.User.RequireUniqueEmail = true;
             })
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+               .AddDefaultUI()
+               .AddRoles<IdentityRole>()
+               .AddRoleManager<RoleManager<IdentityRole>>()
+               .AddDefaultTokenProviders()
+               .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 

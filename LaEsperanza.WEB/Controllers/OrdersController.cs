@@ -8,21 +8,26 @@ using Microsoft.EntityFrameworkCore;
 using LaEsperanza.WEB.Data;
 using LaEsperanza.WEB.Models;
 using LaEsperanza.WEB.ViewModels;
-
-
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LaEsperanza.WEB.Controllers
 {
     public class OrdersController : Controller
     {
+        private readonly UserManager<IdentityUser> userManager;
+        private readonly RoleManager<IdentityRole> roleManager;
         private readonly ApplicationDbContext _context;
 
-        public OrdersController(ApplicationDbContext context)
+        public OrdersController(ApplicationDbContext context, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _context = context;
+            this.userManager = userManager;
+            this.roleManager = roleManager;
         }
 
         // GET: Orders
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Order.Include(o => o.Supplier);

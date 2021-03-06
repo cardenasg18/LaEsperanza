@@ -15,11 +15,15 @@
 <h2 style="margin-left:500px;">@ViewData["Title"]</h2>
 <hr />
 
+<div class="alert alert-danger">
+    <strong>¡Atención!</strong> Si al loguearse no puede visualizar la página "Consultas" por favor desconectarse y volver a iniciar sesión.
+</div>
+
 <div id="login" class="row">
     <div class="col-md-4">
         <section>
             <form method="post">
-                <h4 style="margin-left:10px;">Ingresa tu cuenta</h4>
+                <h4 style="margin-left:35px;">Ingresa tu cuenta</h4>
                 <hr />
                 <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="form-group">

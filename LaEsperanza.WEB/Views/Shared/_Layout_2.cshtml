@@ -40,18 +40,22 @@
     </nav>
 
     @*<center>*@
-        <div class="container body-content">
-            @RenderBody()
+    <div class="row" style="display: block;">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <div class="table-responsive">
+                    @RenderBody()
+                </div>
+            </div>
         </div>
+    </div>
 
     @*</center>*@
     <partial name="_CookieConsentPartial" />
 
 
-
-    <hr />
     <footer>
-        <p></p>
+        
     </footer>
 
     <environment include="Development">

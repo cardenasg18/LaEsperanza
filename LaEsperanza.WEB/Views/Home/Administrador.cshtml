@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "_Layout_2";
+}
+
+<!DOCTYPE html>
+<head>
+    <title>Password</title>
+    <style>
+        body {
+            background-color: lightblue;
+            padding: 30px;
+            padding-left: 575px;
+            padding-top: 50px;
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("passwordBox");
+            var passwordText = password.value;
+            if (passwordText == "Esperanza2021") {
+                return true;
+            }
+                alert("¡Acceso denegado! Introduzca una contraseña correcta o póngase en contacto con un administrador.");
+                return false;
+            }
+    </script>
+</head>
+<body>
+    <br /><br /><br />
+    <p style="font-size: 30pt; margin-left:75px;">Administrador</p>
+    <br />
+    <p style="">Por favor introduzca la contraseña de administrador para avanzar.</p>
+    <br />
+    <p style="margin-left:25px;">
+        Password:<input style="margin-left:5px;" id="passwordBox" type="password" />
+        <a style="margin-left:25px;" class="btn btn-success btn-sm" href="https://localhost:44301/Home/AdministratorEsperanzaBotica2021" onclick="return checkPassword();">
+            Continuar
+        </a>
+    </p>
+</body>
+</html>

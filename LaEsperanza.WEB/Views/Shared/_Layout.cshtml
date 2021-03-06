@@ -83,14 +83,14 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Interfaz
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Componentes</span>
+                    <span>Administrador</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -99,10 +99,10 @@
                         <a class="collapse-item text-black-40" asp-area="" asp-controller="Clasifications" asp-action="Index">Categorías</a>
                         <a class="collapse-item text-black-40" asp-area="" asp-controller="Customers" asp-action="Index">Clientes</a>
                         <a class="collapse-item text-black-40" asp-area="" asp-controller="DocumentTypes" asp-action="Index">Tipo Documento</a>
-                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Items" asp-action="Index">Medicamentos</a>
                         <a class="collapse-item text-black-40" asp-area="" asp-controller="Orders" asp-action="Index">Ordenes de compra</a>
                         <a class="collapse-item text-black-40" asp-area="" asp-controller="Products" asp-action="Index">Inventario</a>
                         <a class="collapse-item text-black-40" asp-area="" asp-controller="Suppliers" asp-action="Index">Suplidor</a>
+                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Home" asp-action="Administrador">Administrador</a>
 
                     </div>
                 </div>
@@ -112,14 +112,15 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Usuario</span>
+                    <span>Usuarios</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Home" asp-action="Contact">Consultas</a>
+                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Items" asp-action="Index">Medicamentos</a>
                         <a class="collapse-item text-black-40" asp-area="Identity" asp-page="/Account/Register">Register</a>
                         <a class="collapse-item text-black-40" asp-area="Identity" asp-page="/Account/Login">Login</a>
-
                     </div>
                 </div>
             </li>
@@ -290,10 +291,6 @@
 
     </div>
     <!-- End of Page Wrapper -->
-
-    <script src="https://account.snatchbot.me/script.js"></script>
-    <script>window.sntchChat.Init(161233)</script>
-
 
     <style>
         #subirarriba {

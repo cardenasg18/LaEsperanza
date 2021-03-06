@@ -7,19 +7,26 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LaEsperanza.WEB.Data;
 using LaEsperanza.WEB.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LaEsperanza.WEB.Controllers
 {
     public class DocumentTypesController : Controller
     {
+        private readonly UserManager<IdentityUser> userManager;
+        private readonly RoleManager<IdentityRole> roleManager;
         private readonly ApplicationDbContext _context;
 
-        public DocumentTypesController(ApplicationDbContext context)
+        public DocumentTypesController(ApplicationDbContext context, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _context = context;
+            this.userManager = userManager;
+            this.roleManager = roleManager;
         }
 
         // GET: DocumentTypes
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.DocumentTypes.ToListAsync());
