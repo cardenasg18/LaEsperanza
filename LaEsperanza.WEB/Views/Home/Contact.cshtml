@@ -1,10 +1,15 @@
 ﻿@{
     ViewData["Title"] = "Consultas";
+  
+
 }
 
 
 <h2>@ViewData["Title"]</h2>
+<hr />
 <h4>@ViewData["Message"]</h4>
+
+
 
 <address>
     Av. República de Colombia<br />
@@ -17,6 +22,35 @@
     <strong>Contacto directo:</strong> <a href="mailto:mv03852@gmail.com">mv03852@gmail.com</a><br />
     <strong>Correo de consultas:</strong> <a href="mailto:doc.everythings@gmail.com">doc.everythings@gmail.com</a>
 </address>
+
+<br />
+<hr/>
+
+
+    <h1 style="margin-left:30px;">Pasos para realizar una consulta</h1>
+    <hr />
+    <img style="margin-left:30px;" src="~/images/Indicacion.png">
+
+
+<style>
+    #whatsapp {
+        position: static;
+        image-resolution: 20dpi;
+        right: 20px;
+        bottom: 20px;
+        display: normal;
+        margin-top: 80px;
+        margin-left: 10px;
+    }
+</style>
+
+
+<div id="whatsapp">
+    <a target="_blank" href="https://api.whatsapp.com/send?phone=18099915826&text=¡Hola,%20quiero%20realizar%20una%20consulta!">
+        <img width="80px" src="~/images/whatsapp.png" title="Escríbenos por Whastapp" alt="Escríbenos por Whastapp">
+    </a>
+</div>
+
 
 <script src="https://account.snatchbot.me/script.js"></script>
 <script>window.sntchChat.Init(161233)</script>
