@@ -28,20 +28,20 @@ namespace LaEsperanza.WEB.Models
         [Required(ErrorMessage = "Este campo es obligatorio")]
         [Display(Name = "Sub-total")]
         [DataType(DataType.Currency)]
-        [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = false)]
         public decimal SubTotal { get; set; }
 
         [Display(Name = "Impuesto")]
         [Range(0, 9999999999999999.99, ErrorMessage = "Maximo 18 digitos")]
         [DataType(DataType.Currency)]
-        [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = false)]
         [Column(TypeName = "decimal(18, 2)")]
         public decimal Valueimp { get; set; }
 
         [Required(ErrorMessage = "Este campo es obligatorio")]
         [Display(Name = "Total")]
         [DataType(DataType.Currency)]
-        [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = false)]
         public decimal TotalValue { get; set; }
 
         public virtual Supplier Supplier { get; set; }

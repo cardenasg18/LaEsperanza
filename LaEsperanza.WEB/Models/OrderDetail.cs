@@ -13,10 +13,10 @@ namespace LaEsperanza.WEB.Models
         public int DetailId { get; set; }
 
         [Required]
-        [Display(Name = "Producto")]
-        [ForeignKey("ProductName")]
-        public int ProductiD { get; set; }
-        public Product Product { get; set; }
+        [Display(Name = "Medicamento")]
+        [ForeignKey("ItemName")]
+        public int ItemId{ get; set; }
+        public Item Item { get; set; }
 
         [Required(ErrorMessage = "Este campo es obligatorio.")]
         [Display(Name = "Cantidad")]
@@ -31,7 +31,7 @@ namespace LaEsperanza.WEB.Models
 
         [Display(Name = "Total")]
         [DataType(DataType.Currency)]
-        [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = false)]
         public decimal TotalValue { get; set; }
 
         [Required]

@@ -26,12 +26,12 @@ namespace LaEsperanza.WEB.Controllers
             this.roleManager = roleManager;
         }
 
-        // GET: Orders
+        // GET: Products
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Order.Include(o => o.Supplier);
-            return View(await applicationDbContext.ToListAsync());
+            var dataContext = _context.Order.Include(o => o.Supplier);
+            return View(await dataContext.ToListAsync());
         }
 
         // GET: Orders/Details/5
@@ -56,11 +56,11 @@ namespace LaEsperanza.WEB.Controllers
                 .Include(o => o.Supplier)
                 .FirstOrDefaultAsync(m => m.OrderId == id);
 
-            var dataorder = _context.OrderDetail.Include(od => od.Order).Include(od => od.Product).Where(od => od.OrderId.Equals(id)).ToList();
+            var dataorder = _context.OrderDetail.Include(od => od.Order).Include(od => od.Item).Where(od => od.OrderId.Equals(id)).ToList();
             orderview.Details = dataorder;
 
             ViewData["OrderId"] = new SelectList(_context.Order, "OrderId", "OrderId", orderdetail.OrderId);
-            ViewData["ProductiD"] = new SelectList(_context.Products, "ProductiD", "ProductName", orderdetail.ProductiD);
+            ViewData["ItemId"] = new SelectList(_context.Items, "ItemId", "ItemName", orderdetail.ItemId);
 
             return View(orderview);
 
@@ -179,18 +179,18 @@ namespace LaEsperanza.WEB.Controllers
             return _context.Order.Any(e => e.OrderId == id);
         }
 
-        public async Task<IActionResult> AdicionarProducto([Bind("DetailId,ProductiD,Quantity,UnitPrice,TotalValue,OrderId")] OrderDetail orderDetail)
+        public async Task<IActionResult> AdicionarProducto([Bind("DetailId,ItemId,Quantity,UnitPrice,TotalValue,OrderId")] OrderDetail orderDetail)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(orderDetail);
 
                 int id = orderDetail.OrderId;
-                int id_producto = orderDetail.ProductiD;
+                int id_producto = orderDetail.ItemId;
 
-                Product product = _context.Products.Find(id_producto);
-                decimal precio = product.PriceP;
-                product.Cantidad += Convert.ToInt32(orderDetail.Quantity);
+                Models.Item product = _context.Items.Find(id_producto);
+                decimal precio = product.UnitPrice;
+                product.UnitsInStock += Convert.ToInt32(orderDetail.Quantity);
                 _context.Update(product);
                 _context.SaveChanges();
 
@@ -218,7 +218,7 @@ namespace LaEsperanza.WEB.Controllers
 
             }
 
-            ViewData["ProductiD"] = new SelectList(_context.Products, "ProductiD", "ProductName", orderDetail.ProductiD);
+            ViewData["ItemId"] = new SelectList(_context.Items, "ItemId", "ItemName", orderDetail.ItemId);
             ViewData["OrderId"] = new SelectList(_context.Order, "OrderId", "OrderId", orderDetail.OrderId);
             return View(orderDetail);
 
@@ -243,17 +243,17 @@ namespace LaEsperanza.WEB.Controllers
 
             orderview.Order = await _context.Order
                 .Include(o => o.Supplier)
+
                 .FirstOrDefaultAsync(m => m.OrderId == id);
 
-            var dataorder = _context.OrderDetail.Include(od => od.Order).Include(od => od.Product).Where(od => od.OrderId.Equals(id)).ToList();
+            var dataorder = _context.OrderDetail.Include(od => od.Order).Include(od => od.Item).Where(od => od.OrderId.Equals(id)).ToList();
             orderview.Details = dataorder;
 
             ViewData["OrderId"] = new SelectList(_context.Order, "OrderId", "OrderId", orderdetail.OrderId);
-            ViewData["ProductiD"] = new SelectList(_context.Products, "ProductiD", "ProductName", orderdetail.ProductiD);
+            ViewData["ItemId"] = new SelectList(_context.Items, "ItemId", "ItemName", orderdetail.ItemId);
 
             return View(orderview);
 
         }
     }
-
 }

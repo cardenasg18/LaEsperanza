@@ -22,7 +22,7 @@ namespace LaEsperanza.WEB.Models
         [Required(ErrorMessage ="Favor escribir su apellido.")]
         public string LastName { get; set; }
 
-        [Required(ErrorMessage = "Este campo es obligatorio.")]
+
         [Display(Name = "Correo")]
         [DataType(DataType.EmailAddress, ErrorMessage = "Correo invalido.")]
         public string Email { get; set; }
@@ -32,19 +32,20 @@ namespace LaEsperanza.WEB.Models
         [RegularExpression("([0-9][0-9]*)", ErrorMessage = "Sólo debe Colocar Números")]
         public string Phone { get; set; }
 
-        [Required]
+
         [Display(Name = "Tipo Documento")]
         [ForeignKey("TypeDocument")]
         public int DocumentTypeId { get; set; }
         public DocumentType DocumentType { get; set; }
 
-        [Required(ErrorMessage = "Este campo es obligatorio.")]
+
         [MaxLength(20, ErrorMessage = "Límite de caracteres excedido.")]
         [Display(Name = "Documento")]
         public string Document { get; set; }
 
         [Display(Name ="Nombre completo")]
         public string FullName => $"{CustomerName} {LastName}";
+
 
     }
 }

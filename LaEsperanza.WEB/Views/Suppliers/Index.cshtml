@@ -4,14 +4,19 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Suplidores <a class="btn btn-warning" asp-action="Create">Agregar</a></h2>
+<h2>Index</h2>
 
-
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.SupplierName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierType)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Mail)
@@ -29,15 +34,18 @@
                 @Html.DisplayFor(modelItem => item.SupplierName)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.SupplierType.Type)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Mail)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Telephone)
             </td>
             <td>
-                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.SupplierId">Editar</a> |
-                <a  class="btn btn-dark" asp-action="Details" asp-route-id="@item.SupplierId">Detalles</a> |
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.SupplierId">Eliminar</a>
+                <a asp-action="Edit" asp-route-id="@item.SupplierId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SupplierId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SupplierId">Delete</a>
             </td>
         </tr>
 }

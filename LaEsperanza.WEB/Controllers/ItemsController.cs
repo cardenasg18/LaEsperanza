@@ -25,12 +25,12 @@ namespace LaEsperanza.WEB.Controllers
             this.roleManager = roleManager;
         }
 
-        // GET: Items
-        [Authorize(Roles = "User")]
+        // GET: Clasifications
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
-            var laEsperanzaWEBContext = _context.Items.Include(i => i.Clasification);
-            return View(await laEsperanzaWEBContext.ToListAsync());
+            var applicationDbContext = _context.Items.Include(i => i.Clasification).Include(i => i.Supplier).Include(i => i.Unit);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Items/Details/5
@@ -43,6 +43,8 @@ namespace LaEsperanza.WEB.Controllers
 
             var item = await _context.Items
                 .Include(i => i.Clasification)
+                .Include(i => i.Supplier)
+                .Include(i => i.Unit)
                 .FirstOrDefaultAsync(m => m.ItemId == id);
             if (item == null)
             {
@@ -56,6 +58,8 @@ namespace LaEsperanza.WEB.Controllers
         public IActionResult Create()
         {
             ViewData["ClasificationId"] = new SelectList(_context.Clasifications, "ClasificationId", "ItemType");
+            ViewData["SupplierId"] = new SelectList(_context.Suppliers, "SupplierId", "SupplierName");
+            ViewData["UnitId"] = new SelectList(_context.Unit, "UnitId", "UnitName");
             return View();
         }
 
@@ -64,7 +68,7 @@ namespace LaEsperanza.WEB.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ItemId,ClasificationId,ItemName,Comment")] Item item)
+        public async Task<IActionResult> Create([Bind("ItemId,ClasificationId,ItemName,UnitId,Time,UnitPrice,UnitsInStock,Lote,Comment,SupplierId")] Item item)
         {
             if (ModelState.IsValid)
             {
@@ -73,6 +77,8 @@ namespace LaEsperanza.WEB.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ClasificationId"] = new SelectList(_context.Clasifications, "ClasificationId", "ItemType", item.ClasificationId);
+            ViewData["SupplierId"] = new SelectList(_context.Suppliers, "SupplierId", "SupplierName ", item.SupplierId);
+            ViewData["UnitId"] = new SelectList(_context.Unit, "UnitId", "UnitName", item.UnitId);
             return View(item);
         }
 
@@ -90,6 +96,8 @@ namespace LaEsperanza.WEB.Controllers
                 return NotFound();
             }
             ViewData["ClasificationId"] = new SelectList(_context.Clasifications, "ClasificationId", "ItemType", item.ClasificationId);
+            ViewData["SupplierId"] = new SelectList(_context.Suppliers, "SupplierId", "SupplierName ", item.SupplierId);
+            ViewData["UnitId"] = new SelectList(_context.Unit, "UnitId", "UnitName", item.UnitId);
             return View(item);
         }
 
@@ -98,7 +106,7 @@ namespace LaEsperanza.WEB.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ItemId,ClasificationId,ItemName,Comment")] Item item)
+        public async Task<IActionResult> Edit(int id, [Bind("ItemId,ClasificationId,ItemName,UnitId,Time,UnitPrice,UnitsInStock,Lote,Comment,SupplierId")] Item item)
         {
             if (id != item.ItemId)
             {
@@ -126,6 +134,8 @@ namespace LaEsperanza.WEB.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ClasificationId"] = new SelectList(_context.Clasifications, "ClasificationId", "ItemType", item.ClasificationId);
+            ViewData["SupplierId"] = new SelectList(_context.Suppliers, "SupplierId", "SupplierName", item.SupplierId);
+            ViewData["UnitId"] = new SelectList(_context.Unit, "UnitId", "UnitName", item.UnitId);
             return View(item);
         }
 
@@ -139,6 +149,8 @@ namespace LaEsperanza.WEB.Controllers
 
             var item = await _context.Items
                 .Include(i => i.Clasification)
+                .Include(i => i.Supplier)
+                .Include(i => i.Unit)
                 .FirstOrDefaultAsync(m => m.ItemId == id);
             if (item == null)
             {

@@ -1,0 +1,62 @@
+﻿@model LaEsperanza.WEB.Models.PurchaseOrder
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+
+<h3>¿Segura que desea eliminar esta factura?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Payment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Payment.Pway)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OrderTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.comentario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.comentario)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SubTotal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SubTotal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Valueimp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Valueimp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalValue)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TotalValue)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.CustomerName)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="PurchaseId" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a class="btn btn-primary"  asp-action="Index">Regresar</a>
+    </form>
+</div>

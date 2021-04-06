@@ -26,7 +26,7 @@ namespace LaEsperanza.WEB.Controllers
         }
 
         // GET: Products
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Products.ToListAsync());

@@ -13,8 +13,8 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="ProductiD" class="control-label"></label>
-                <select asp-for="ProductiD" class ="form-control" asp-items="ViewBag.ProductiD"></select>
+                <label asp-for="ItemId" class="control-label"></label>
+                <select asp-for="ItemId" class ="form-control" asp-items="ViewBag.ItemId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Quantity" class="control-label"></label>
@@ -36,14 +36,14 @@
                 <select asp-for="OrderId" class ="form-control" asp-items="ViewBag.OrderId"></select>
             </div>
             <div class="form-group">
-                <a class="btn btn-primary" asp-action="Index">Regresar</a> |
-                <input type="submit" value="Guardar" class="btn btn-warning" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

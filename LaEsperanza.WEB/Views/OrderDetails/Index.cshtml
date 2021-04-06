@@ -7,13 +7,13 @@
 <h2>Index</h2>
 
 <p>
-    <a class="btn btn-warning"asp-action="Create">Agregar</a>
+    <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Product)
+                @Html.DisplayNameFor(model => model.Item)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Quantity)
@@ -34,7 +34,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Product.ProductName)
+                @Html.DisplayFor(modelItem => item.Item.Comment)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Quantity)
@@ -49,9 +49,9 @@
                 @Html.DisplayFor(modelItem => item.Order.OrderId)
             </td>
             <td>
-                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.DetailId">Editar</a> |
-                <a  class="btn btn-dark" asp-action="Details" asp-route-id="@item.DetailId">Detalles</a> |
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.DetailId">Eliminar</a>
+                <a asp-action="Edit" asp-route-id="@item.DetailId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DetailId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DetailId">Delete</a>
             </td>
         </tr>
 }

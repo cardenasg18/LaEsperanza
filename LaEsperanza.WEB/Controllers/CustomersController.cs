@@ -25,7 +25,7 @@ namespace LaEsperanza.WEB.Controllers
             this.roleManager = roleManager;
         }
 
-        // GET: Customers
+        // GET: Clasifications
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {

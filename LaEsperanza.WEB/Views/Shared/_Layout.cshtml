@@ -96,13 +96,18 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header text-gray-800">Tablas:</h6>
 
+                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Home" asp-action="Administrador">Administrador</a>
                         <a class="collapse-item text-black-40" asp-area="" asp-controller="Clasifications" asp-action="Index">Categorías</a>
                         <a class="collapse-item text-black-40" asp-area="" asp-controller="Customers" asp-action="Index">Clientes</a>
+                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Payments" asp-action="Index">Forma de pago</a>
+                        <a class="collapse-item text-black-40" asp-area="" asp-controller="PurchaseOrders" asp-action="Index">Facturar</a>
+                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Items" asp-action="Index">Inventario</a>
+                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Suppliers" asp-action="Index">Suplidor</a>
+                        <a class="collapse-item text-black-40" asp-area="" asp-controller="SupplierTypes" asp-action="Index">Tipo Suplidor</a>
                         <a class="collapse-item text-black-40" asp-area="" asp-controller="DocumentTypes" asp-action="Index">Tipo Documento</a>
                         <a class="collapse-item text-black-40" asp-area="" asp-controller="Orders" asp-action="Index">Ordenes de compra</a>
-                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Products" asp-action="Index">Inventario</a>
-                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Suppliers" asp-action="Index">Suplidor</a>
-                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Home" asp-action="Administrador">Administrador</a>
+                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Units" asp-action="Index">Presentación</a>
+
                     </div>
                 </div>
             </li>
@@ -116,8 +121,10 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item text-black-40" asp-area="Identity" asp-page="/Account/Register">Register</a>
+
                         <a class="collapse-item text-black-40" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                        <a class="collapse-item text-black-40" asp-area="Identity" asp-page="/Account/Register">Register</a>
+
                     </div>
                 </div>
             </li>
@@ -131,8 +138,10 @@
                 <div id="collapseServicios" class="collapse" aria-labelledby="headingServicios"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
+
                         <a class="collapse-item text-black-40" asp-area="" asp-controller="Home" asp-action="Contact">Consultas</a>
-                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Items" asp-action="Index">Medicamentos</a>
+                        <a class="collapse-item text-black-40" asp-area="" asp-controller="Products" asp-action="Index">Medicamentos</a>
+                        
                     </div>
                 </div>
             </li>

@@ -20,7 +20,12 @@ namespace LaEsperanza.WEB.Data
         public DbSet<DocumentType> DocumentTypes { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
-        public DbSet<LaEsperanza.WEB.Models.OrderDetail> OrderDetail { get; set; }
-        public DbSet<LaEsperanza.WEB.Models.Order> Order { get; set; }
+        public DbSet<OrderDetail> OrderDetail { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<PurchaseOrder> PurchaseOrder { get; set; }
+        public DbSet<PurchaseDetail> PurchaseDetail { get; set; }
+        public DbSet<Payment> Payment { get; set; }
+        public DbSet<LaEsperanza.WEB.Models.SupplierType> SupplierType { get; set; }
+        public DbSet<LaEsperanza.WEB.Models.Unit> Unit { get; set; }
     }
 }

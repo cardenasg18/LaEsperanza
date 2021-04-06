@@ -25,11 +25,11 @@ namespace LaEsperanza.WEB.Controllers
             this.roleManager = roleManager;
         }
 
-        // GET: OrderDetails
+        // GET: Clasifications
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.OrderDetail.Include(o => o.Order).Include(o => o.Product);
+            var applicationDbContext = _context.OrderDetail.Include(o => o.Item).Include(o => o.Order);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -42,8 +42,8 @@ namespace LaEsperanza.WEB.Controllers
             }
 
             var orderDetail = await _context.OrderDetail
+                .Include(o => o.Item)
                 .Include(o => o.Order)
-                .Include(o => o.Product)
                 .FirstOrDefaultAsync(m => m.DetailId == id);
             if (orderDetail == null)
             {
@@ -56,8 +56,8 @@ namespace LaEsperanza.WEB.Controllers
         // GET: OrderDetails/Create
         public IActionResult Create()
         {
-            ViewData["OrderId"] = new SelectList(_context.Set<Order>(), "OrderId", "OrderId");
-            ViewData["ProductiD"] = new SelectList(_context.Set<Product>(), "ProductiD", "ProductName");
+            ViewData["ItemId"] = new SelectList(_context.Items, "ItemId", "Comment");
+            ViewData["OrderId"] = new SelectList(_context.Order, "OrderId", "OrderId");
             return View();
         }
 
@@ -66,7 +66,7 @@ namespace LaEsperanza.WEB.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DetailId,ProductiD,Quantity,UnitPrice,TotalValue,OrderId")] OrderDetail orderDetail)
+        public async Task<IActionResult> Create([Bind("DetailId,ItemId,Quantity,UnitPrice,TotalValue,OrderId")] OrderDetail orderDetail)
         {
             if (ModelState.IsValid)
             {
@@ -74,8 +74,8 @@ namespace LaEsperanza.WEB.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["OrderId"] = new SelectList(_context.Set<Order>(), "OrderId", "OrderId", orderDetail.OrderId);
-            ViewData["ProductiD"] = new SelectList(_context.Set<Product>(), "ProductiD", "ProductName", orderDetail.ProductiD);
+            ViewData["ItemId"] = new SelectList(_context.Items, "ItemId", "Comment", orderDetail.ItemId);
+            ViewData["OrderId"] = new SelectList(_context.Order, "OrderId", "OrderId", orderDetail.OrderId);
             return View(orderDetail);
         }
 
@@ -92,8 +92,8 @@ namespace LaEsperanza.WEB.Controllers
             {
                 return NotFound();
             }
-            ViewData["OrderId"] = new SelectList(_context.Set<Order>(), "OrderId", "OrderId", orderDetail.OrderId);
-            ViewData["ProductiD"] = new SelectList(_context.Set<Product>(), "ProductiD", "ProductName", orderDetail.ProductiD);
+            ViewData["ItemId"] = new SelectList(_context.Items, "ItemId", "Comment", orderDetail.ItemId);
+            ViewData["OrderId"] = new SelectList(_context.Order, "OrderId", "OrderId", orderDetail.OrderId);
             return View(orderDetail);
         }
 
@@ -102,7 +102,7 @@ namespace LaEsperanza.WEB.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DetailId,ProductiD,Quantity,UnitPrice,TotalValue,OrderId")] OrderDetail orderDetail)
+        public async Task<IActionResult> Edit(int id, [Bind("DetailId,ItemId,Quantity,UnitPrice,TotalValue,OrderId")] OrderDetail orderDetail)
         {
             if (id != orderDetail.DetailId)
             {
@@ -129,8 +129,8 @@ namespace LaEsperanza.WEB.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["OrderId"] = new SelectList(_context.Set<Order>(), "OrderId", "OrderId", orderDetail.OrderId);
-            ViewData["ProductiD"] = new SelectList(_context.Set<Product>(), "ProductiD", "ProductName", orderDetail.ProductiD);
+            ViewData["ItemId"] = new SelectList(_context.Items, "ItemId", "Comment", orderDetail.ItemId);
+            ViewData["OrderId"] = new SelectList(_context.Order, "OrderId", "OrderId", orderDetail.OrderId);
             return View(orderDetail);
         }
 
@@ -143,8 +143,8 @@ namespace LaEsperanza.WEB.Controllers
             }
 
             var orderDetail = await _context.OrderDetail
+                .Include(o => o.Item)
                 .Include(o => o.Order)
-                .Include(o => o.Product)
                 .FirstOrDefaultAsync(m => m.DetailId == id);
             if (orderDetail == null)
             {

@@ -25,11 +25,12 @@ namespace LaEsperanza.WEB.Controllers
             this.roleManager = roleManager;
         }
 
-        // GET: Suppliers
+        // GET: Clasifications
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Suppliers.ToListAsync());
+            var applicationDbContext = _context.Suppliers.Include(s => s.SupplierType);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Suppliers/Details/5
@@ -41,6 +42,7 @@ namespace LaEsperanza.WEB.Controllers
             }
 
             var supplier = await _context.Suppliers
+                .Include(s => s.SupplierType)
                 .FirstOrDefaultAsync(m => m.SupplierId == id);
             if (supplier == null)
             {
@@ -53,6 +55,7 @@ namespace LaEsperanza.WEB.Controllers
         // GET: Suppliers/Create
         public IActionResult Create()
         {
+            ViewData["SupplierTypeId"] = new SelectList(_context.SupplierType, "SupplierTypeId", "Type");
             return View();
         }
 
@@ -61,7 +64,7 @@ namespace LaEsperanza.WEB.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("SupplierId,SupplierName,Mail,Telephone")] Supplier supplier)
+        public async Task<IActionResult> Create([Bind("SupplierId,SupplierName,SupplierTypeId,Mail,Telephone")] Supplier supplier)
         {
             if (ModelState.IsValid)
             {
@@ -69,6 +72,7 @@ namespace LaEsperanza.WEB.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["SupplierTypeId"] = new SelectList(_context.SupplierType, "SupplierTypeId", "Type", supplier.SupplierTypeId);
             return View(supplier);
         }
 
@@ -85,6 +89,7 @@ namespace LaEsperanza.WEB.Controllers
             {
                 return NotFound();
             }
+            ViewData["SupplierTypeId"] = new SelectList(_context.SupplierType, "SupplierTypeId", "Type", supplier.SupplierTypeId);
             return View(supplier);
         }
 
@@ -93,7 +98,7 @@ namespace LaEsperanza.WEB.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("SupplierId,SupplierName,Mail,Telephone")] Supplier supplier)
+        public async Task<IActionResult> Edit(int id, [Bind("SupplierId,SupplierName,SupplierTypeId,Mail,Telephone")] Supplier supplier)
         {
             if (id != supplier.SupplierId)
             {
@@ -120,6 +125,7 @@ namespace LaEsperanza.WEB.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["SupplierTypeId"] = new SelectList(_context.SupplierType, "SupplierTypeId", "Type", supplier.SupplierTypeId);
             return View(supplier);
         }
 
@@ -132,6 +138,7 @@ namespace LaEsperanza.WEB.Controllers
             }
 
             var supplier = await _context.Suppliers
+                .Include(s => s.SupplierType)
                 .FirstOrDefaultAsync(m => m.SupplierId == id);
             if (supplier == null)
             {

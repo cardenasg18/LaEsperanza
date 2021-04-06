@@ -1,0 +1,74 @@
+﻿@model IEnumerable<LaEsperanza.WEB.Models.PurchaseOrder>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Facturas <a class="btn btn-warning" asp-action="Create">Agregar</a></h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Cliente
+                @*@Html.DisplayNameFor(model => model.Customer)*@
+            </th>
+            <th>
+                Método de pago
+                @*@Html.DisplayNameFor(model => model.Payment)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderTime)
+            </th>
+            <th>
+                Descripción
+                @*@Html.DisplayNameFor(model => model.comentario)*@
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.SubTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valueimp)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.TotalValue)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Payment.Pway)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.comentario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valueimp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+            </td>
+
+            <td>
+                <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.PurchaseId">Detalles</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.PurchaseId">Eliminar</a>
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>
