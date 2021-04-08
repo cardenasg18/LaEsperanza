@@ -1,0 +1,68 @@
+﻿@model IEnumerable<LaEsperanza.WEB.Models.ItemWithImage>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>
+        Productos     <a class="btn btn-warning" asp-action="Create">Agregar</a>
+    </h2>
+
+<p>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Producto
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                Nombre del Producto
+                @*@Html.DisplayNameFor(model => model.ProductName)*@
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>*@
+            <th>
+                Precio
+                @*@Html.DisplayNameFor(model => model.PriceP)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Presentation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src="@("~/UserImages/" + item.ImageName)" asp-append-version="true" width="150px" height="150px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Presentation)
+            </td>
+            <td>
+                <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.UserProductID">Detalles</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.UserProductID">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -27,5 +27,6 @@ namespace LaEsperanza.WEB.Data
         public DbSet<Payment> Payment { get; set; }
         public DbSet<LaEsperanza.WEB.Models.SupplierType> SupplierType { get; set; }
         public DbSet<LaEsperanza.WEB.Models.Unit> Unit { get; set; }
+        public DbSet<ItemWithImage> ItemWithImages { get; set; }
     }
 }

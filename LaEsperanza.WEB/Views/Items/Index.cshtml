@@ -4,22 +4,25 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+    
+        <h2>
+            Inventario         <a class="btn btn-warning" asp-action="Create">Agregar</a>
+        </h2>
+    
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Clasification)
+                Clasificación
+                @*@Html.DisplayNameFor(model => model.Clasification)*@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ItemName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Unit)
+                Presentación
+                @*@Html.DisplayNameFor(model => model.Unit)*@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Time)
@@ -33,12 +36,13 @@
             <th>
                 @Html.DisplayNameFor(model => model.Lote)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Comment)
-            </th>
-            <th>
+            </th>*@
+            @*<th>
+                Suplidor
                 @Html.DisplayNameFor(model => model.Supplier)
-            </th>
+            </th>*@
             <th></th>
         </tr>
     </thead>
@@ -66,16 +70,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Lote)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Comment)
-            </td>
-            <td>
+            </td>*@
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Supplier.SupplierName)
-            </td>
+            </td>*@
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ItemId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ItemId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ItemId">Delete</a>
+                <a class="btn btn-success btn-sm" asp-action="Edit" asp-route-id="@item.ItemId">Editar</a> |
+                <a class="btn btn-dark btn-sm" asp-action="Details" asp-route-id="@item.ItemId">Detalles</a> |
+                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.ItemId">Eliminar</a>
             </td>
         </tr>
 }

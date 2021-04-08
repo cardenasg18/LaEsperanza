@@ -45,15 +45,16 @@
                 <input asp-for="TotalValue" class="form-control" />
                 <span asp-validation-for="TotalValue" class="text-danger"></span>
             </div>*@
-            <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-warning" />
-            </div>
+        <div class="form-group">
+            <a class="btn btn-primary" asp-action="Index">Regresar</a> |
+
+            <input type="submit" value="Guardar" class="btn btn-warning" />
+        </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a class="btn btn-primary" asp-action="Index">Regresar</a>
 </div>
 
 @section Scripts {
