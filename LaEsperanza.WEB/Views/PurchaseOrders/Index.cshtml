@@ -65,7 +65,8 @@
 
             <td>
                 <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.PurchaseId">Detalles</a> |
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.PurchaseId">Eliminar</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.PurchaseId">Eliminar</a> |
+                <a class="btn btn-info" target="_blank" asp-action="PrintPDF" asp-route-id="@item.PurchaseId">Imprimir</a>
             </td>
 
         </tr>
