@@ -33,6 +33,20 @@ namespace LaEsperanza.WEB.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Search(string varSearch)
+        {            
+            ViewData["GetDetails"] = varSearch;
+
+            var varQuery = from x in _context.PurchaseOrder.Include(o => o.Customer).Include(o => o.Payment) select x;
+            if (!String.IsNullOrEmpty(varSearch))
+            {
+                varQuery = varQuery.Where(x => x.Customer.CustomerName.Contains(varSearch) || x.Customer.Document.Contains(varSearch));
+            }
+
+            return View(await varQuery.AsNoTracking().ToListAsync());
+        }
+
         // GET: Orders/Details/5
         public async Task<IActionResult> Details(int? id)
         {

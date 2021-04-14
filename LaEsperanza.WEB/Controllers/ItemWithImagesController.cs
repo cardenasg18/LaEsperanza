@@ -35,6 +35,20 @@ namespace LaEsperanza.WEB.Controllers
             return View(await _context.ItemWithImages.ToListAsync());
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Search(string varSearch)
+        {
+            ViewData["GetDetails"] = varSearch;
+
+            var varQuery = from x in _context.ItemWithImages select x;
+            if (!String.IsNullOrEmpty(varSearch))
+            {
+                varQuery = varQuery.Where(x => x.Title.Contains(varSearch));
+            }
+
+            return View(await varQuery.AsNoTracking().ToListAsync());
+        }
+
         // GET: ItemWithImages/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -74,7 +88,7 @@ namespace LaEsperanza.WEB.Controllers
                 string fileName = Path.GetFileNameWithoutExtension(itemWithImage.ImageFile.FileName);
                 string extension = Path.GetExtension(itemWithImage.ImageFile.FileName);
                 itemWithImage.ImageName = fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-                string path = Path.Combine(wwwRootPath + "/UserImages/", fileName);
+                string path = Path.Combine(wwwRootPath + "/Imagenes/", fileName);
                 using (var fileStream = new FileStream(path, FileMode.Create))
                 {
                     await itemWithImage.ImageFile.CopyToAsync(fileStream);
@@ -166,7 +180,7 @@ namespace LaEsperanza.WEB.Controllers
             var itemWithImage = await _context.ItemWithImages.FindAsync(id);
 
             // Delete image from wwwroot/UserImages
-            var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "UserImages", itemWithImage.ImageName);
+            var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "Imagenes", itemWithImage.ImageName);
             if (System.IO.File.Exists(imagePath))
                 System.IO.File.Delete(imagePath);
 

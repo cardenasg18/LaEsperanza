@@ -24,10 +24,10 @@
 <form method="get" asp-action="Search">
 
     <div class="row">
-        <h2 style="margin-left:30px;">Inventario <a class="btn btn-warning" asp-action="Create">Agregar</a></h2>
+        <h2 style="margin-left:30px;">Facturas <a class="btn btn-warning" asp-action="Create">Agregar</a></h2>
 
 
-        <input id="buscador" type="search" placeholder="Nombre del medicamento..." value="@ViewData["GetDetails"]" name="varSearch" class="form-control" />
+        <input id="buscador" type="search" placeholder="Nombre del empleado..." value="@ViewData["GetDetails"]" name="varSearch" class="form-control" />
         <input id="botones" type="submit" name="Search" class="btn btn-success" />
         <a id="botones" asp-action="Index" class="btn btn-primary">
             <i class="fas fa-fw fa-reply-all"></i>
