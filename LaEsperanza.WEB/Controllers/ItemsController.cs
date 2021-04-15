@@ -31,7 +31,7 @@ namespace LaEsperanza.WEB.Controllers
             var applicationDbContext = _context.Items.Include(i => i.Clasification).Include(i => i.Supplier).Include(i => i.Unit);
             return View(await applicationDbContext.ToListAsync());
         }
-
+        
 
         [HttpGet]
         public async Task<IActionResult> Search(string varSearch)
@@ -41,7 +41,7 @@ namespace LaEsperanza.WEB.Controllers
             var varQuery = from x in _context.Items.Include(o => o.Clasification).Include(o => o.Supplier).Include(i => i.Unit) select x;
             if (!String.IsNullOrEmpty(varSearch))
             {
-                varQuery = varQuery.Where(x => x.ItemName.Contains(varSearch));
+                varQuery = varQuery.Where(x => x.ItemName.Contains(varSearch) || x.Clasification.ItemType.Contains(varSearch));
             }
 
             return View(await varQuery.AsNoTracking().ToListAsync());
