@@ -4,8 +4,6 @@
     ViewData["Title"] = "Index";
 }
 
-
-
 <style>
     #botones {
         margin-left: 10px;
@@ -24,10 +22,10 @@
 <form method="get" asp-action="Search">
 
     <div class="row">
-        <h2 style="margin-left:30px;">Facturas <a class="btn btn-warning" asp-action="Create">Agregar</a></h2>
+        <h2 style="margin-left:30px;">Inventario <a class="btn btn-warning" asp-action="Create">Agregar</a></h2>
 
 
-        <input id="buscador" type="search" placeholder="Nombre del empleado..." value="@ViewData["GetDetails"]" name="varSearch" class="form-control" />
+        <input id="buscador" type="search" placeholder="Nombre del medicamento..." value="@ViewData["GetDetails"]" name="varSearch" class="form-control" />
         <input id="botones" type="submit" name="Search" class="btn btn-success" />
         <a id="botones" asp-action="Index" class="btn btn-primary">
             <i class="fas fa-fw fa-reply-all"></i>
@@ -51,6 +49,9 @@
                 @*@Html.DisplayNameFor(model => model.Unit)*@
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Contenido)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Time)
             </th>
             <th>
@@ -64,9 +65,8 @@
             </th>
             @*<th>
                     @Html.DisplayNameFor(model => model.Comment)
-                </th>*@
-            @*<th>
-                    Suplidor
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.Supplier)
                 </th>*@
             <th></th>
@@ -86,6 +86,9 @@
                     @Html.DisplayFor(modelItem => item.Unit.UnitName)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Contenido)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Time)
                 </td>
                 <td>
@@ -97,16 +100,16 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Lote)
                 </td>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.Comment)
-                    </td>*@
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.Supplier.SupplierName)
-                    </td>*@
                 <td>
-                    <a class="btn btn-success btn-sm" asp-action="Edit" asp-route-id="@item.ItemId">Editar</a> |
-                    <a class="btn btn-dark btn-sm" asp-action="Details" asp-route-id="@item.ItemId">Detalles</a> |
-                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.ItemId">Eliminar</a>
+                    @Html.DisplayFor(modelItem => item.Comment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Supplier.Mail)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ItemId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ItemId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ItemId">Delete</a>
                 </td>
             </tr>
         }

@@ -29,6 +29,11 @@ namespace LaEsperanza.WEB.Models
         public int UnitId { get; set; }
         public Unit Unit { get; set; }
 
+        [Required(ErrorMessage = "Este campo es obligatorio.")]
+        [Display(Name = "Contenido")]
+        [MaxLength(30, ErrorMessage = "Límite de caracteres excedido.")]
+        public string Contenido { get; set; }
+
         [Display(Name = "Fecha vencimiento")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [DataType(DataType.Date)]
@@ -37,6 +42,7 @@ namespace LaEsperanza.WEB.Models
         [Required(ErrorMessage = "Este campo es obligatorio.")]
         [Display(Name = "Precio unidad")]
         [DataType(DataType.Currency)]
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = false)]
         public decimal UnitPrice { get; set; }
 
         [Required(ErrorMessage = "Este campo es obligatorio.")]
